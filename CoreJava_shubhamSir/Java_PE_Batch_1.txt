@@ -1,0 +1,47 @@
+Java
+=====================================================
+
+Basic Java 
+Advanced Java
+
+
+Angular(UI)
+
+
+Database( MySQL)
+======================================================
+JDK -Java Developement Kit
+
+
+What is Java?
+    -Java is a programming language.
+	-Its is object oriented programming language.
+
+
+Features Of Java -
+    1)WORA (Write once run anywhere)
+    2)Platform independent
+
+
+
+
+
+
+Where we are using java ?
+
+1)Enterprise Application
+     - Business Application 
+     - Banking Application
+2)Mobile Application
+    - LinkedIn
+	- IRCTC
+	
+3)Robotics
+4)Web Application
+5)Desktop Application
+    -Antivirus
+    -Media Player
+6)Gaming Application
+7)Embeded Systems
+===============================================     	
+	

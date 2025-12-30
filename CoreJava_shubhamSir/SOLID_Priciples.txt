@@ -1,0 +1,68 @@
+SOLID Principles
+=====================================================
+
+S-- Single Responsibility
+O-- Open/Closed
+L-- Liskov Substitution
+I-- Interface Segregatiion
+D-- Dependency Inversion
+
+
+-----------------------------------------------------
+
+-In 2000 Robert Martin introduced SOLID Priciples.
+-In earlier he presents paper on "Design Priciples and Design Patterns"
+-On this concept later deeply introduced by Michel Feathers.(Similar to SOLID).
+-Hence from last 24 years these 5 priciples we are using for object oriented programming which
+chages the way to write software.
+
+
+-Due to this principle we can make our application more maintainable, 
+easily understandable, scable,flexible.
+- Application grows--> we can reduce their complexity
+
+----------------------------------------------------------------------------------
+
+S - Single Responsibility 
+    
+	-A class should only have one responsibilty.
+	-Hence in future if anything we want to change then we only have one reason to change.
+	
+	Due to this we can achive-
+	  1)Testing - A class with oe responsibility will have few test cases.
+	  2)Organization - Smaller and well organized classes are easier to search
+	  3)Lower coupling - Since we have less functionality in a sigle class we have fewer dependency
+--------------------------------------------------------------------------------------
+
+
+O - Open/Closed
+    
+	Note - Open for Extension ,closed for modification
+	- By doing this we can stop ourself(developers)from modifing the existing code and stop arrising
+	the bugs.
+-----------------------------------------------------------------------------------------
+
+L- Liskov Substitution
+ 
+         - If class A is a subtype of class B, we should be able to replace B with A without disrupting the behaviour of program.
+         -the Liskov Substitution Principle is named after the brilliant Barbara Liskov. Simply put, it states that a child class should be able to replace its parent class seamlessly. This means that objects of the child class should be able to substitute objects of the parent class without causing any issues or breaking the application's integrity.
+-----------------------------------------------------------------------------------------------------
+
+
+I - Interface Segregation Principle(ISP)
+
+Client(child) should not be forced to depened on interfae that they do not use.
+This priciples encourges the creation of specifice interfaceas per need of client(child), rather than cratib one lange interface that serves multiple clients.
+
+ 
+------------------------------------------------------------------------------------------------------
+
+D- Dependency Inversion
+
+High level module should not depend on low level module.
+Both should depend on abstarction.
+In addtionaly abstaction should not depend on details but details should be depend on abstarction.
+So, we can achive loose coupling between components,making code more flexible and easier to change.
+
+
+	

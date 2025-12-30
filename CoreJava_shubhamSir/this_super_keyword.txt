@@ -1,0 +1,96 @@
+this keyword
+
+=============================================================================
+
+- this keyword  is a reference variable that refers to the current object.
+
+Use cases
+1.used to refer current class instance variables.
+2.used to call(invoke) current class method.
+3.used to call currnet class constructor.
+
+
+======================================================
+
+
+Super keyword
+
+-it is reference vaiable which refers to immediate parent class object
+-when you create instance of subclass(child class) it creates implicitly instace of parent class
+-super() can be used to invoke immediate parent class constructor.
+
+==================================
+
+
+public class Customer {
+
+	private int custId;
+	private String custName;
+	private String address;
+	private String mobNo;
+	private String accNum;
+
+	public Customer() {
+
+	}
+
+	public Customer(int custId, String custName, String addrerss, String mobNo, String accNum) {
+		this.custId = custId;
+		this.custName = custName;
+		this.address = addrerss;
+		this.mobNo = mobNo;
+		this.accNum = accNum;
+
+	}
+
+	public int getCustId() {
+		return custId;
+	}
+
+	public void setCustId(int custId) {
+		this.custId = custId;
+	}
+
+	public String getCustName() {
+		return custName;
+	}
+
+	public void setCustName(String custName) {
+		this.custName = custName;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getMobNo() {
+		return mobNo;
+	}
+
+	public void setMobNo(String mobNo) {
+		this.mobNo = mobNo;
+	}
+
+	public String getAccNum() {
+		return accNum;
+	}
+
+	public void setAccNum(String accNum) {
+		this.accNum = accNum;
+	}
+ ==========================================================
+
+
+public class Test {
+
+	public static void main(String[] args) {
+		Customer cust = new Customer();
+	    cust.setCustId(78);
+
+		System.out.println(cust.getCustId());
+
+	}

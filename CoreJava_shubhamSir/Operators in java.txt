@@ -1,0 +1,221 @@
+Operator Keyword
+
+===============================================
+Arithematic Operator:
+
++
+-
+*
+/  -  10/2  = 5    ---> quotient
+% (modulus)  -  10%2  = 0   ---> Reminder 
+
+
+Example ->
+
+	        System.out.println(10 + 2);
+		System.out.println(10 - 2);
+		System.out.println(10 * 2);
+		System.out.println(10 / 2);
+		System.out.println(10 % 2);
+
+---------------------------------
+		int a = 60;
+		int b = 20;
+		
+		int result = a * b;
+		System.out.println("Result is :"+result);
+		
+===========================================
+
+Unary Operator
+
+int a=10; 
+
+a++; --> postfix    -->post increment
+++a; --> prefix     ---> pre increment
+
+a--;      ---postfix   ---> post decrement
+--a;      --prefix     ---> pre decrement
+
+
+example:
+
+		int a = 20;
+		a++;      // 20 -> 21
+		a++;      // 21 -> 22
+	    ++a;    //23 -> 23
+        System.out.println(a);      // 23
+		System.out.println(--a);    //22
+		System.out.println(a++);    //22  -> 23
+		System.out.println(--a);    //22 -> 22
+=================================================================================
+
+Relational operator
+
+<
+>
+<=
+>=
+==    
+!=
+
+example :
+
+	
+		int a = 56;
+		int b =78;
+		
+		if(a != b) {
+			System.out.println("Boy");
+		}else {
+			System.out.println("Girl");
+		}
+
+==================================================================================
+logical operator
+
+&&
+||
+
+
+Exp1 -->
+         int a =5;
+         int b = 7;
+         
+		System.out.println((a < b) && (b > a));    -----> if all conditions are true then it will return true otherwise false
+		System.out.println((a > b) || (b < a));   -----> if one of the condition is true then it will return true otherwise false
+
+
+
+Exp2 -->
+	
+		int per = 91;
+		int maths = 87;
+		
+		
+		if((per >= 90) || (maths >= 90)) {
+			System.out.println("Got Iphone");
+		}else {
+			System.out.println("No Iphone");
+		}
+===================================================================================
+ternary operator
+
+?:
+
+
+Example ->
+
+	int marks =58;
+         
+		System.out.println((marks > 60) ? "first class" : "Second class"); 
+	
+		int balance = 23000;
+        System.out.println(balance >= 30000 ? "current account" : "saving account");
+	
+
+==================================================================================
+Assignment Operator 
+=
++=	
+-=
+*=
+/=
+%=
+
+<< 
+>>
+
+Example ->
+
+int f = 67;
+		f += 30;
+         System.out.println(f);
+         
+         int p = 23;
+         p -= 10;
+         System.out.println(p);
+         
+         int g =2;
+         g *= 5;
+         System.out.println(g);
+         
+         int m = 10;
+         m /=2;
+         System.out.println(m);
+         
+         int n = 10;
+         n %=2;
+
+         System.out.println(n);
+        //left shift operator
+         System.out.println(10<<2);  // 10*2^2=10*4 =40
+         System.out.println(5<<3);   // 5*2^3 =5*8 =40
+         System.out.println(7<<5);    // 7*2^5 =7*32 = 224
+         
+         //right shift operator
+         System.out.println(10>>2);   // 10/2^2 = 10/4 =2 
+         System.out.println(10>>3);     // 10/2^3 = 10/8 =1
+=========================================================================================
+
+Bitwise operator
+
+1)&
+2)|
+3)^
+
+---------------------------------------------------------------
+&  ->
+
+
+  0101   - 5
+& 0111   - 7
+--------------
+  0101 
+
+        int a = 5;
+        int b = 7;    
+  System.out.println("a&b= "+(b & a));
+----------------------------------------------------------------
+
+|   ->
+
+
+  0101   - 5
+| 0111   - 7
+--------------
+  0111   - 7
+
+        int a = 5;
+        int b = 7;    
+  System.out.println("a|b= "+(b | a));
+
+-----------------------------------------------------------------
+^ ->
+
+  0101   - 5
+^ 0111   - 7
+--------------
+  0010   - 2
+
+        int a = 5;
+        int b = 7;    
+  System.out.println("a^b= "+(b ^ a));
+
+
+---------------------------------------
+1)convert to binay
+2)add(&,|,^) then as per truth table
+3)result convert to decimal
+
+
+
+
+
+
+
+
+
+
+
+

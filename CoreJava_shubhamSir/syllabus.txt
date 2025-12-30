@@ -1,0 +1,71 @@
+August 2023 -Evening Batch
+-----------------------------
+Core Java
+ 
+   -History
+   -JDK,JRE,JVM,
+   -Features of Java
+   -Class, Packages, Project Structure
+   -Main method exlpanation
+   -methods - static, non static 
+   -Access Modifiers
+   -Data types
+   -String class
+   -final,
+   -variables
+   -operators
+   -loops- for,while,do while
+   -star patter programs
+   -switch statement
+   -if -else, nested if else
+   -arrays-2d,3d
+   -oops - class , objects, inheritance, polymorphism,encapsulation,abstarction(abstarct class)
+   -interface
+   -Functional interface
+   -Collections -(Set,Queue,List)
+   -comprator
+   -comparable
+   -Map
+   -Stream Api -(Map, flatmap)
+   
+   -Exceptions
+   -Multithreading
+ ----------------------------------------  
+   Database-(MY Sql)
+      - DDL
+	  -DML
+	  Schema , table creation
+      PK,FK	  
+	  Insert
+	  Upadte
+	  Delete
+	  Fetch  
+	  Like,Count,Min,Max
+	  AND,OR, Not 
+	  Joins in mysql
+	  
+ ------------------------------------------------------  
+   
+    
+  Advanced Java -
+   -JDBC
+      - CRUD Operation
+   -Servlet 
+   -Hibernate
+      Mapping -One to one
+	           One to many
+               Many to one 
+               Many to Many
+  -	Entity creation
+  -Spring boot project stucture
+  -Application.properties
+  -@SpringBootApplication Explanation
+  - Maven
+  -pom.xml
+  -Rest Apis - Get, put, post ,delete
+  -Native querry , JPQL querry
+  -Service, service impl
+  -Repository
+  -Rest controller
+  
+       	  

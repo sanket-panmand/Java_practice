@@ -1,0 +1,42 @@
+Type Casting
+==================================================
+
+Type casting is a process of converting a variable from one data type to another.
+It is done by placing the desired type in parantheses before the variable.
+
+1)Primitive Type Casting
+    
+	This involves converting between  primitive data types to another primitive data types.
+	ex- convering int to double and vice versa.
+	
+	 
+	 Casting Type :
+	 
+	   a)Implicit casting(widening casting)(automatically)   
+		   - convering smaller data type to longer data type
+		ex:-   
+		int a = 10;       
+		double d = a;  
+		
+		
+		ex2:	  
+		  ASCII - American Standard Code for Information Interchange
+		  
+		      char ch = 'H';   
+              int num = ch;     
+                  
+            System.out.println(num);      //Prints  ASCII value
+				 
+			Note: When you are converting char type to any other numric data type typethen it will
+                  give you ascii value of that element.			
+	      
+	   
+	   b)Explicit casting(Narrowing Casting)(manually)
+	   
+	      - converting a large data type to a smaller size data type
+		ex:  
+		  double d = 56.67;
+		  int a =(int) d;
+		  
+===========================================================================================
+

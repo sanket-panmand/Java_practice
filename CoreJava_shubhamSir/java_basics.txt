@@ -1,0 +1,28 @@
+
+
+Why Java?
+=============================================
+
+-- features of java
+
+1)WORA(Write once run anywhere)/platform independent
+2)used to design object oriented application
+objects comes with -> class, methods/functions, variables , object  => java is object oriented
+3)Multithreading and memory management(GC - garbage collector)
+4)It is used for distributed environment of internet
+
+========================================================
+
+JDK - Java Developement Kit
+
+Editor tools-
+
+it is platform where we can write our program
+
+-eclipse
+-notepad
+-vs code
+-netbeans
+-sts
+-intellej
+

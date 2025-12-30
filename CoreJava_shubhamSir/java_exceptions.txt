@@ -1,0 +1,345 @@
+Exceptions 
+=======================================================================
+- Exception is an unwanted or unexpected event, which occurs during program execution.
+-Exception actually disturbs the flow of program execution.
+-Exception is an object which is throws at runtime.
+
+-Exception is a class which extends throwable class
+
+---------------------------------------------------------------------
+
+error - it is considered as unchecked exception.
+- error we cant handle
+Ex- Out of memory error
+    Stack overflow error
+
+======================================================================
+-There are mainly two types of exceptions :
+
+  A)Built in Exceptions:
+  B)User- defined exception( Custom exceptions)
+
+
+ A)Built in Exceptions:
+   1.checked (compile time)
+   2.unchecked(run time )
+
+
+ B)User- defined exception(Custom exceptions)
+
+--------------------------
+
+
+
+1. Checked Exception
+
+     - Checked Exceptions are the exceptions are also called as compile time exception because these exceptions are checked at compile time by compiler.
+    - The classes that directly inherit the throwable(Exception) class expect RunTimeException and error
+       are know as checked exceptions
+
+example-> classNotFoundException
+          IOExceptions
+          SQLExceptions
+          FileNotFoundExceptions
+
+
+2. Unchecked Exceptions/RunTime Exception
+   - Those classes which extends the RunTimeExceptions are called as unchecked exceptions.
+   - We can call run time exceptions also as it throws exceptions at run time.
+
+example ->  NullPointerExceptions
+            IndexOutOfBOundException
+            ArithematicException
+            IllegalArgumentException
+
+3.Error
+
+   -It is something which we cant handle. Error is irrecoverable.
+
+Example - OutOfMemoryError
+          stackOverFlowError
+
+
+
+
+example-
+
+
+	//	int a = 10/0;
+		
+	//	String str = null;
+	//	System.out.println(str.length());
+		
+		int arr[] = new int[2];
+		arr[0]=7;
+		arr[1]= 5;
+		arr[2]= 6;
+		
+		
+		
+		System.out.println("Hey ...");
+		System.out.println("Hey ...good morning");
+	}
+
+
+===========================================================
+
+public static void main(String[] args) {
+
+		String className = "Customer";
+
+		try {
+			Class<?> clas = Class.forName(className);
+			System.out.println("Class loaded" + clas.getName());
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+
+==============================================================
+
+Exception Handling keywords-
+
+  Java Provides you some keywords for exception handling -
+
+1.throw -
+
+-it is an keyword which is used to throw an exception.
+- Throw keyword is used to create custom error.
+
+2.throws- 
+- it is a keyword used when we are throwing an exception in a method and not 
+handling it.
+- we have to use throws keyword in a method signature to let the caller program 
+  know that the  exception that might be thrown by method.
+
+3.try-catch
+
+-we used try-catch block for exception handing in our code.
+- try is start of the block
+-catch is the end of try block which we used to catch the exceptions.
+- we can have multiple catch blocks for one try block.
+-we cant use catch block alone.
+-we cant use try block alone it must be followd by either catch block or finally block or both.
+
+
+
+4. finally
+
+- finally block is used to execuate the necessary code of the program.
+- so finally block is execuated weather an exception is handled or not.
+- so we can write clean code in our finally block.
+
+ex->
+close the sql connection 
+
+
+Example -
+
+public static void main(String[] args) {
+		try {
+			validateAge();
+			//System.out.println("hey...");
+		} catch (NullPointerException e) {
+			e.printStackTrace();
+		}
+		
+		//optional 
+		finally {
+			System.out.println("hey...");
+		}
+	}
+
+	public static  void validateAge() throws NullPointerException {
+		String s = null;
+		System.out.println(s.length());
+	}
+=================================================================================================================
+printStackTrace() -
+
+  - This is a mehod which prints exception information in the format of name of exception and description.
+  - it trace the information on which line the exception is occured.
+
+toString()-
+  -This method also provides the information of exception in the format of name of exception and description.
+  
+getMessage() -
+  - this method only provides the description of exception.
+
+
+=====================================================================================
+
+
+	public static void main(String[] args)  {
+
+		checkAge(14);
+	}
+	
+	public static void checkAge(int age) throws ArithmeticException {
+		if(age >= 18) {
+			System.out.println("You are mature..you can login now");
+		}else {
+			throw new ArithmeticException("u cant login as you are not mature");
+		}
+		
+		System.out.println("you are loged in");
+	}
+
+================================================================================
+
+
+	public static void main(String[] args)  {
+
+			try {
+				checkAge(12);
+				System.out.println("okokok");
+			} catch (AgeInvalidException e) {
+				e.printStackTrace();
+			}
+		
+			finally {
+			System.out.println("in finally...");
+			}
+		
+		
+	}
+	
+	public static void checkAge(int age) throws AgeInvalidException{
+		if(age >= 18) {
+			System.out.println("You are mature..you can login now");
+		}else {
+			throw new AgeInvalidException("u cant login as you are not mature");
+		}
+	
+			int a = 10;
+			int b =5;
+			
+			if(b !=0) {
+				int c = a /b;
+			}else {
+				throw new ArithmeticException("U cant divide by 0");
+			}
+		
+		System.out.println("you are loged in");
+		
+	}
+===================================================================================
+
+
+public class AgeInvalidException  extends Exception{
+
+	public AgeInvalidException(String msgOfExceptin) {
+		super(msgOfExceptin);
+	}
+}	
+
+
+--------------**********************************_____________________________________________
+
+
+public class ExceptionParent {
+
+	public void divide(int divident, int dvisisor) {
+		try {
+			int div = divident / dvisisor;
+			System.out.println("Output is : "+div);
+			System.out.println("Hello");
+			
+		}catch (ArithmeticException e) {
+              System.out.println("In ExceptionParent calss(specific) --- >" +e);
+		}catch (Exception e) {
+			System.out.println("In ExceptionParent calss(general) --- >" +e);
+		}
+
+		finally {
+			System.out.println("I am in finally");
+		}
+		
+	
+	}
+}
+===========================================================================
+
+public class ExceptionChild extends ExceptionParent{
+
+@Override
+	public void divide(int divident, int dvisisor) {
+		
+		try {
+			super.divide(divident, dvisisor);
+		} catch (ArithmeticException e) {
+			System.out.println("In ExceptionChild calss(specific) --- >" + e);
+		}  catch (Exception e) {
+			System.out.println("In ExceptionChild calss --- >" + e);
+
+		}
+-------------------------------------------------------------------------
+
+
+
+
+
+	public static void main(String[] args) {
+
+		try {
+			int res = divideNumber(10, 0);
+			System.out.println("Result-->"+res);
+			System.out.println("Hey I am after try catch");
+		} catch (CustomException e) {
+			e.printStackTrace();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		
+		
+		finally {
+            System.out.println("Hey I am in finally");
+		}
+
+	}
+
+	public static int divideNumber(int divident, int divisior) throws CustomException {
+
+		if (divisior == 0) {
+			throw new CustomException("divisior should not be zero");
+		}
+		return divident / divisior;
+	}
+=================================================================
+
+public class CustomException extends Exception{
+
+	public CustomException(String msg) {
+		super(msg);
+	}
+}
+====================================================================
+
+
+Try with resource---->
+
+====================================================================
+- In java try with resource statement allows you to declare and initialize resource that will automitically closed when try block exist.
+This is specially useful to mangae resource like file,db connection,socket, where you need to ensure 
+that they are properly closed their connection to prevent resource leaks.
+
+
+
+
+public class TryCatchWithResourceExample {
+
+	public static void main(String args[]) {
+		
+		try(FileInputStream file = new FileInputStream("abc.txt");
+				FileInputStream file2 = new FileInputStream("abd.txt")) {
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	
+	}
+}
+
+
+Advantage of try with resource-->
+This eliminate the need of explicit finally block to close the resource(file ,db)

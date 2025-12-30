@@ -1,0 +1,47 @@
+Variables Scopes:
+
+==================================================================================
+
+We have two scopes of variable
+
+1)global scopes   -> inside class and outside the method 
+2)local scopes    -> inside method
+
+note : we cannot write static varible inside methods.  -> as static keyword is belongs to class level
+
+
+
+int a;   //variable  declare
+a=78;    // variable define
+
+int z = 56;   //variable  decalre and define
+
+public class VariablesScopes {
+
+	int a =20;      //global and non static variable
+	static int b =30;  //global and static vartiable   
+	
+	public static void main(String[] args) {
+		int a =10;  // local variable
+		System.out.println(a);
+		System.out.println(b);
+	}
+	
+	public static void anything() {
+		int b =34343; //local varibles
+		System.out.println(b);
+	}
+	
+	public void something() {
+		int b =34343;   //local vaqribale
+		System.out.println(b);
+	}
+
+}
+
+===================================================================
+
+can we make class as static?    
+difference between global and local variable?
+can we write static variable inside methods?
+

@@ -1,0 +1,29 @@
+Public - access modifier / visibility
+
+=============================
+private
+default
+protected
+
+void - (return type) - which returns nothing
+static - keyword / no need to crete object to call the method
+
+two types of methods
+1.static method   
+2.non static
+
+
+- in parenthesis if any thing is present we called it as arguments/parameters
+
+
+Syntax of methd ->
+
+acessmodifier returntype methodname( ){
+
+}
+
+Example of method: -
+
+public void addNum() {
+
+}

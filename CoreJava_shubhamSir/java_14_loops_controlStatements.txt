@@ -1,0 +1,691 @@
+Loops in java
+
+=================================================================
+
+Java Control Statement
+
+
+A).Decision making statement
+
+1.if-else statement
+
+public static void main(String[] args) {
+		int age = 23;
+		IfElseStatementExample aa = new IfElseStatementExample();
+		String msg = aa.validateUser(age);
+		System.out.println(msg);
+		
+		int marks = 35;
+		
+		if(marks >= 35) {
+			System.out.println("Pass");
+		}else {
+			System.out.println("Fail");
+		}
+
+
+	
+		int rating = 5;	
+		if(rating > 3) {
+			System.out.println("good");
+		}else {
+			System.out.println("bad");
+		}
+		
+		
+
+	}
+	
+	public String validateUser(int age) {
+		String msg;
+		if(age >= 18) {
+			msg ="Eligible"	;		
+		}else {
+			msg ="Not Eligible"	;
+	
+		}
+		
+	return msg;
+	}
+
+
+
+2.Nested If-else statement
+
+int marks = 100;
+	
+public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter your marks");
+		
+		int marks = sc.nextInt();
+		if(marks >= 75) {			
+			
+		System.out.println("Distinction");
+			
+		}else if(marks >=60 && marks < 75) {
+			System.out.println("First class");
+		}else if(marks >= 55 && marks < 60) {
+			System.out.println("second class");
+		}else if(marks >= 35 && marks < 55) {
+			System.out.println("first class");
+		}else {
+			System.out.println("fails");
+		}
+
+	}
+
+-------------------------------------------------------------------------------*******
+	
+		
+	Scanner sc = new Scanner(System.in);
+
+		System.out.println("Select your choice: 1.Add 2.Sub 3.Mult, 4.Div");
+		String choice = sc.next();
+
+		System.out.println("Enter your first number:");
+
+		long a = sc.nextInt();
+
+		System.out.println("Enter your Second number:");
+		int b = sc.nextInt();
+		
+		if(choice.equals("Add")) {
+			System.out.println(a+b);
+		}else if(choice.equals("Sub")) {
+			System.out.println(a-b);
+		}else if(choice.equals("Mult")) {
+			System.out.println(a*b);
+		}else if(choice.equals("Div")) {
+			System.out.println(a/b);
+		}else {
+			System.out.println("Invalid Choice..enter the mentioned choice");
+		}
+
+=================================================================
+
+	public static void main(String args[]) {
+	   Scanner sc = new Scanner(System.in);
+	   System.out.println("Enter the role:1)admin 2)maker 3)checker 4)Approver");
+	   
+	   String role = sc.next();
+	   
+	   if(role.equalsIgnoreCase("admin")) {
+		   System.out.println("This role is having all the access");
+	   }else if(role.equalsIgnoreCase("maker")) {
+		   System.out.println("This role is having write access");
+	   }else if(role.equalsIgnoreCase("checker")) {
+		   System.out.println("This role is having read access");
+
+	   }else {
+		   System.out.println("This role is having read and write access");
+ 
+	   }
+	}
+
+
+
+
+int age = 12;
+		
+			System.out.println(age > 18 ? "mature" : "adult");   
+
+===================================================================
+	
+
+2.switch
+
+Scanner sc = new Scanner(System.in);
+		System.out.println("Enter names");
+		System.out.println("Pranav, Rupali, Mahendra, Swati");
+		String names =sc.next();
+		
+		switch(names) {
+		
+		case "Pranav":
+			System.out.println("89/100");
+			break;
+		case "Rupali":
+			System.out.println("90/100");
+			break;
+		case "Mahendra":
+			System.out.println("96/100");
+			break;	
+			
+		case "Swati":
+			System.out.println("92/100");
+			break;
+			
+			default:
+				System.out.println("wrong input");	
+			
+		}
+
+	}
+
+
+
+public static void main(String[] args) {
+	
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter week number from 1 to 7");
+		
+		int weekNum = sc.nextInt();
+		
+		switch(weekNum) {
+
+		case 1 :{
+			System.out.println("Sunday");
+			break;
+		}
+		
+		case 2 : {
+			System.out.println("Monday");
+			break;
+		}
+		
+		case 3 : {
+			System.out.println("Tuesday");
+			break;
+		}
+		
+		case 4 : {
+			System.out.println("Wednesday");
+			break;
+		}
+		case 5 : {
+			System.out.println("Thursday");
+			break;
+		}
+		
+		case 6 : {
+			System.out.println("Friday");
+			break;
+		}
+		
+		case 7 : {
+			System.out.println("Saturday");
+			break;
+		}
+		
+		default : {
+			System.out.println("Invalid choice...");
+		}
+		
+		}
+	
+	
+	}
+-----------------------------------------------------------------
+Scanner sc = new Scanner(System.in);
+		System.out.println("Enter week number to print week");
+		System.out.println("1 , 2, 3, 4, 5, 6, 7");	
+		
+		int weekNo = sc.nextInt();
+		
+		switch(weekNo) {
+		case 1:
+			System.out.println("Monday");
+			break;
+		case 2:
+			System.out.println("Tuesday");
+			break;
+		case 3 :
+			System.out.println("Wednesday");
+			break;
+		case 4 :
+			System.out.println("Thursday");
+			break;
+		case 5:
+			System.out.println("Friday");
+			break;
+		case 6:
+			System.out.println("Saturday");
+			break;
+			
+		case 7:
+			System.out.println("Sunday");
+			break;
+			
+		default:
+			System.out.println("Wrong input...");
+			
+		}
+
+========================================================================
+B)Loop Statement
+
+1.for loop
+2.while loop
+3.do while
+
+4.for-each loop
+
+c)Jump Statement
+1.Break
+2.continue
+
+
+============================================================
+
+B)Loop Statement
+============
+
+1.for loop
+============
+
+- we use for loop only when we exactly know the number of times ,
+ we want to exacute block of code.
+ 
+ 
+ syntax-
+ 
+ for(int i=1;i<=10;i++) {       // 1st condition-initialization of variable //2nd condition-condition  //3rd - increment or decrement
+			System.out.println(i);        
+		}
+
+
+
+Second example:
+
+Scanner sc =new Scanner(System.in);
+      
+		for(int i=1; i<=3; i++) {
+			System.out.println("Enter your first number:");
+			int a = sc.nextInt();
+			System.out.println("Enter your second number:");
+			int b = sc.nextInt();
+			int c = a + b;
+			System.out.println("Addition is:"+c);
+			System.out.println("==============================");	
+		}
+
+--------------------------------------------------------------
+
+for(int i=5; i >=1; i--) {
+			System.out.println("World Cup");
+		}
+
+----------------------------------------
+**-------Program to print table of given number--------------------****
+
+      Scanner sc = new Scanner(System.in);     
+		System.out.println("Enter the number to print table :");
+		int a = sc.nextInt();
+		
+		for(int i=1; i<=10; i++) {
+			System.out.println(a*i);  
+			
+		}
+
+==================================
+
+  2 nested for loop
+=======================================
+ex -1:
+
+
+for(int i =1; i <=3; i++) {
+			System.out.println(i);
+			for(int j = 1; j<=3; j++) {
+				System.out.println(j);
+			}	
+		}
+
+ex -2:
+for(int i =1; i <=3; i++) {
+			for(int j = 1; j<=3; j++) {
+				for(int k =1;k<=3; k++) {
+					System.out.println(i+":"+j+":"+k);
+				}
+			}	
+		}
+
+
+
+
+ex-3 :
+
+		for(int i=1; i<=10; i++) {
+			
+			for(int j=1; j<=3; j++) {
+				System.out.println("Java");
+			}
+			System.out.println("=================");
+		}
+
+	}
+ex-
+for(int i=1; i<=5; i++) {
+			System.out.println(i);
+			for(int j=1;j<=4; j++) {
+				System.out.println(j);
+			}
+			System.out.println("========================");
+		}
+	    
+
+===========
+
+star pattern
+
+for(int i =1; i <=3; i++) {
+			
+			for(int j =1; j<=i; j++) {   
+				System.out.print("*");
+			}
+			System.out.println();
+			
+		}
+
+output:
+*
+**
+***
+
+ex-3
+public static void printStarEx2() {
+		int rows = 3;
+		for (int i = 0; i < rows; i++) {
+
+			for (int j = rows - i; j > 1; j--) {
+				System.out.print(" ");
+			}
+			
+			for(int k=0;k<=i;k++) {
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+	}
+
+output: 
+  *
+ * *
+* * *
+
+
+==========================================================
+que-> print number from 1 to 25
+que-> print 10's table
+Que ->Print following star pattern by using for loop:
+
+output: 
+
+***
+**
+*
+
+==========================================================================
+
+while loop
+
+- when you don't know exact number of times we need to execute loop
+
+int j=1;
+		while(j <= 10) {
+			System.out.print(j+",");
+			j++;
+			
+		}
+------------------------------------
+
+	int i =1;
+		 while(true) {
+			 System.out.println(i);	 
+		 }
+
+==============================================================================
+
+Ex: --> Number guessing System
+
+
+package com.wipro.controlstmt;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class WhileLoopEx2 {
+
+	public static void main(String[] args) {
+		System.out.println("***Welcome to Number Guessing System***");
+		System.out.println("Try to enter any number between 1 to 100:");
+		
+		Scanner sc = new Scanner(System.in);
+		Random random = new Random();
+		int randomNumber = random.nextInt(100) + 1;
+
+		
+		int guess;
+		while (true) {
+			System.out.println("Enter your Guss:");
+			guess = sc.nextInt();
+
+			if (guess == randomNumber) {
+				System.out.println("You Guessed the Correct Number:" + randomNumber);
+				break;
+			} else if (guess < randomNumber) {
+				System.out.println("Too low..try again!");
+			} else {
+				System.out.println("Too hign..try again!");
+			}
+
+		}
+
+	}
+
+}
+
+
+=============================================================================
+
+do while loop
+ - when you don't know exact number of times we need to execute loop,
+ but you want to execute your loop at least once
+ 
+
+
+syntax:
+
+ex-1:
+
+int k =1;
+		do {
+			System.out.println(k);
+			k++;
+		}while(k <=10);
+		
+		
+ex-2:
+
+int i =1;
+		do {
+			System.out.println("I am in do while loop");
+			i++;
+		} while (i<=3);
+
+----------------------------------
+
+public static void main(String[] args) {
+		int i=5;
+		do {
+			System.out.println(i);
+		} while (true);     //when your condition returns true till you loop will execuate
+	}
+		
+============================================================================
+
+advanced for loop
+
+
+//advanced for
+		int arr[] = {1,8,9,7,5,7,3,5};	
+		for(int ss:arr) {
+			System.out.println(ss);
+		}
+		
+
+		
+========================================================
+
+1)prime number
+2)swap the number
+
+int a;
+		int b;
+		System.out.println("Enter your first number:");
+		Scanner sc = new Scanner(System.in);
+		a = sc.nextInt();
+		
+		System.out.println("Enter your first number:");
+		Scanner sc1 = new Scanner(System.in);
+		b = sc1.nextInt();
+		
+		System.out.println("Number before Swapping where a="+a+"and b="+b);
+
+		int temp=0;
+		
+		temp = a;    
+		a = b;
+		b = temp;
+		
+		System.out.println("Number after Swapping where a="+a+"and b="+b);
+		
+		
+		
+		int x =20;
+		int y=30;
+		
+		x = x + y;   // x = 20 +30;   x =50;
+		y=  x - y;    //y = 50 - 30;  y=20;
+		x = x - y;    //x = 50 - 20; x=30;
+		
+		System.out.println("x="+x+" and y="+y);
+		
+		
+		
+
+3)fibonacci series
+4)palindrome
+5)string reverse
+6)find second highest number in given array
+7)string palindrom
+
+madam
+radar
+
+
+
+model classes/pojo classes
+
+pojo- plain old java object
+	
+		
+
+
+===============================================================================
+--if else if example: 
+
+
+1)Write a program to check the categorie reviews of movie->
+2)Write a program to check the number is odd or even
+3)write a program to check number is prime or not
+
+============================================================
+-- switch statement example
+1)wap to print month name by taking input from user from 1 to 12.
+2)wap to print sirname of candidates by taking name od candidate as input
+3)wap to print account balance of user when user put his accountnumber as a input
+
+
+
+
+
+1)WAP to find duplicate name from fruitArray;
+		String fruitArr[]= new String[8];
+		fruitArr[0]="Apple";
+		fruitArr[1]="Orange";
+		fruitArr[2]="Banana";
+		fruitArr[3]="Pinapple";
+		fruitArr[4]="Apple";
+		fruitArr[5]="Chiku";
+		fruitArr[6]="Watermelon";
+		fruitArr[7]="Mnago";
+
+
+2)WAP to find Comman cityname from two different arrays.
+
+	String arr1[]= new String[4];
+		arr1[0]="Solapur";
+		arr1[1]="Pune";
+		arr1[2]="Mumbai";
+		arr1[3]="Satara";
+		
+		String arr2[]= new String[4];
+		arr2[0]="Mumbai";
+		arr2[1]="Kolhapur";
+		arr2[2]="Sangali";
+		arr2[3]="Solapur";
+
+===================================================
+
+public class Test {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the otp");
+		int otp = sc.nextInt();
+		
+		IFElseExample a = new IFElseExample();
+		boolean res = a.validateOtp(otp);
+		if(res == true) {
+			System.out.println("Otp matched");
+		}else {
+			System.out.println("Invalid OTP");
+		}
+
+		System.out.println("===============================================");
+		System.out.println("Enter the marks");
+		int marks = sc.nextInt();
+		String status = a.checkMarksStatus(marks);
+		System.out.println(status);
+	}
+
+}
+
+================================
+
+public class IFElseExample {
+
+	
+	public boolean validateOtp(int otp) {
+		int dbOtp = 6789;
+		boolean otpValidate = false;
+		if(dbOtp == otp) {
+			otpValidate = true;
+		}else {
+			otpValidate = false;		
+		}
+		return otpValidate;
+	}
+	
+	
+	public String checkMarksStatus(int marks) {
+		String status = null;
+		if (marks >= 75) {
+			status = "Distinction";
+		} else if (marks >= 60 && marks < 75) {
+			status = "First Class";
+		} else if (marks >= 55 && marks < 60) {
+			status = "Second Class";
+		} else if (marks >= 35 && marks < 55) {
+			status = "Pass";
+		} else {
+			status = "Fail";
+		}
+
+		return status;
+	}
+
+}

@@ -1,0 +1,348 @@
+Array
+====================================================
+
+- Array is a collection of similar type of elements which has contiguous memory location.
+-Array is an object which contains element of same data type.
+-element of array is stored into contiguous memory location.
+- Array is a index based where I can store my first number on 0th index, second number on 1st index,
+   third number on 2nd index and so on.
+
+
+Types of Array  :
+
+    1. Single Dimensional Array
+    2. Multi Dimensional Array 
+
+
+syntax and example->
+
+	int b[] = {8,7,12,6,9,5,33,1} ;   // array literal
+		
+
+int arr[]= new int[8];   // array declaration      by new keyword
+		arr[0]= 8;
+		arr[1]=7;
+		arr[2]= 12;
+		arr[3]= 6;
+		arr[4]=9;
+		arr[5] = 5;
+		arr[6]= 33;
+		arr[7]=1;
+
+for(int dd:arr){
+System.out.println(dd);
+}
+
+
+note :  when you try to insert extra element in the array ,when your array is completely full
+  or you array index is not present then it will throw array index out of bounds exception.
+-------------------------------------------------------------------
+
+
+String names[]=new String[5];
+		names[4]="Komal";    // 0 to 4 -> 
+		names[2]="Vaishali";
+		names[1]="Akashay";
+		names[2]="Snehal";
+		names[3]="Akashay";
+
+		System.out.println(names[2]);
+
+
+	      for(String data : names) {
+	        System.out.println(data);
+		}
+
+****************************************************************************
+
+
+public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);	
+		System.out.println("Enter the array size :");
+		int arrSize = sc.nextInt();	
+		String acoountTypes[]= new String[arrSize];
+		
+		for(int i=0; i< acoountTypes.length;i++ ) {  
+			System.out.println("Enter The Account Type:");
+			acoountTypes[i]=sc.next();
+			
+		}
+		
+		System.out.println("======================================");
+		
+		for(int j=0; j<=acoountTypes.length-1;j++) {
+			System.out.println(acoountTypes[j]);
+		}
+		
+		
+		
+	}
+---------------------------------------------------------------------
+
+
+Example->
+
+
+		
+		int arr[]= new int[8];   // array declaration
+		arr[0]= 8;
+		arr[1]=7;
+		arr[2]= 12;
+		arr[3]= 6;
+		arr[4]=9;
+		arr[5] = 5;
+		arr[6]= 33;
+		arr[7]=1;
+	
+		System.out.println(arr.length);
+
+		for(int x : arr ) {          //for each loop
+			System.out.println(x);
+		}
+		
+		System.out.println("==============================");
+		String strArr[] = new String[3];
+		strArr[0]= "Shital";
+		strArr[1]="Mayur";
+		
+		for(String y : strArr) {        //for each loop
+			System.out.println(y);
+		}
+		
+		//when u take inpust from users
+		Scanner sc = new Scanner(System.in);
+		int p[]= new int[4];
+		
+		for(int i=0; i< p.length;i++) {
+			System.out.println("Enter the number in "+i+" position");
+			p[i]= sc.nextInt();
+		}
+		
+		System.out.println("Numbers in array which are entered by user");
+		
+		for(int z :p) {
+			System.out.println(z);
+		}
+=============================================================================
+
+
+
+
+		
+		int b[]= {4,6,8,9,4,2,34,2,2,3,232,3,2};
+		
+		int a[] = new int[4];
+		a[0]=5;
+		a[1]=6;
+		a[2]=4;
+		a[3]=7;
+		
+		String str[]= new String[6];
+		str[0]="Akshay";
+		str[1]="Pramod";
+		str[2]="Priti";
+		str[3]="Shrinivas";
+		str[4]="Hanmant";
+		str[5]="Pragati";
+		
+		for(int i=0; i < str.length ; i++) {
+			System.out.println(str[i]);
+		}
+		
+		
+		
+		
+		
+		char c[]= new char[3];
+		c[0]='a';
+		c[1]='e';
+		c[2]='o';
+		
+		boolean f[] = new boolean[2];
+		f[0]=true;
+		f[1]=false;
+		
+		
+
+		
+		
+	
+
+	}
+===========================================
+
+public static void main(String[] args) {
+	
+		int a[]= new int[3];
+
+		Scanner sc = new Scanner(System.in);
+		
+		for(int i=0; i<a.length; i++) {
+			System.out.println("Enter your value");
+			a[i]=sc.nextInt();
+		}
+		
+		System.out.println("=======================================");
+		for(int i=0; i<a.length; i++) {
+			System.out.println(a[i]);
+		}
+		
+	}
+
+====================================================================================================
+
+
+
+2) 2D Array :
+
+   - Multidimensional arrays are arrays of arrays.
+        Here each element of the array holding reference of another array.
+
+
+Synatx :-->   
+
+int arr2 [][] = {{2,6,4},{4,8,4},{5,8,5}}; // array literal
+		
+----------------------------------------------------------------------
+		// 2D array - 2 Dimensional Array
+		int arr[][] = new int[3][2];      //2D Array 3 rows 2 columns
+
+		// rows -3 columns -2
+		arr[0][0] = 23;
+		arr[0][1] = 34;
+
+		arr[1][0] = 89;
+		arr[1][1] = 69;
+
+		arr[2][0] = 90;
+		arr[2][1] = 78;
+
+		System.out.println(arr[0][1]);
+		System.out.println("====================");
+
+		for (int row[] : arr) {
+			for (int col : row) {
+				System.out.println(col);
+			}
+		}
+	
+
+-----------------------------------------------
+example of mapping -->
+
+[5][2]
+
+int arr3[][] ={{2,5},{4,6},{3,6},{5,5},{6,8}}
+--------------------------------------------------
+--String example
+
+String str[][]= new String[2][2];
+		
+		str[0][0]="Manisha";
+		str[0][1]="Neha";
+		
+		str[1][0]="Anchal";
+		str[1][1]="Asmita";
+		
+		for(String row[] : str) {
+			for(String col : row) {
+				System.out.println(col);
+			}
+		}
+		
+==========================================================
+
+
+
+
+public class TwoDArrayExample {
+
+	public static void main(String[] args) {
+
+		int arr[][] = new int[2][4];
+		arr[0][0] = 7;
+		arr[0][1] = 2;
+		arr[0][2] = 5;
+		arr[0][3] = 6;
+		arr[1][0] = 8;
+		arr[1][1] = 1;
+		arr[1][2] = 9;
+		arr[1][3] = 3;
+
+		for (int i = 0; i <= 1; i++) {  
+
+			for (int j = 0; j <= 3; j++) {     
+               System.out.println(arr[i][j]);
+			}
+		}
+
+	}
+
+}
+===============================================================
+
+public class TwoDArrayExample2 {
+
+	public static void main(String[] args) {
+		String strArr[][] = new String[2][2];
+
+		strArr[0][0] = "Rutuja";
+		strArr[0][1] = "Dhanashri";
+
+		strArr[1][0] = "Maisha";
+		strArr[1][1] = "Ravina";
+
+		for (int i = 0; i <= 1; i++) {
+
+			for (int j = 0; j <= 1; j++) {
+				System.out.println(strArr[i][j]);
+			}
+		}
+
+	}
+}
+===================================================================
+
+
+
+package com.ibm.datatypes;
+
+import java.util.Scanner;
+
+public class UserInputArray {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the rows number:");
+		int rows = sc.nextInt();
+		System.out.println("Enter the column number:");
+		int column = sc.nextInt();
+
+		int arr[][] = new int[rows][column];
+		
+		for (int i = 0; i < rows; i++) {   
+
+			for (int j = 0; j < column; j++) {    
+				System.out.println("Enter the number");
+                  int inputNo = sc.nextInt();
+                  arr[i][j]=inputNo;
+			}
+		}
+
+		
+		System.out.println("=============Printing number after inserting==============");
+		
+		
+		for (int i = 0; i < rows; i++) {   
+
+			for (int j = 0; j < column; j++) {    
+				System.out.println(arr[i][j]);
+			}
+		}
+	}
+
+}
+
+		

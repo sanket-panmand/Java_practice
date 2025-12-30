@@ -1,0 +1,54 @@
+class exception_handling {
+        public static void main(String args[]) {
+            try {
+                int a[] = {1, 2,3 , 4, 5};
+                for (int i = 0; i < 5; i++) 
+                    System.out.print(a[i]);
+                   
+                int x = 1/0;
+            }
+            catch(ArrayIndexOutOfBoundsException e) {
+        	System.out.print("A");        	
+            }
+            catch(ArithmeticException e) {     	
+                System.out.print("B");
+            }
+        }
+    }
+
+
+
+================
+
+Write a program to check if two given String is Anagram of each other. Your function should return true if two Strings are Anagram, false otherwise. A string is said to be an anagram if it contains the same characters and same length, but in a different order, e.g. ‘LISTEN’ and ‘SILENT’ are anagrams, ‘FRIED’ and ‘FIRED’ are anagrams.
+
+
+
+
+
+starting with 2 using Stream.
+List<Integer> myList = Arrays.asList(10, 2, 3, 25, 1, 234, 424);
+
+
+
+
+
+
+
+
+=============================================
+
+let array =[1,5,6,7,3,2,,1,1,1,1,3,4];
+let uniqueArr = Arrays.from(new Set(array));
+
+
+let uniqueArr :number[]=[];
+
+array.forEach((element)=>{
+if(!uniqueArr.includes(element)){
+
+}
+
+}
+
+============================================

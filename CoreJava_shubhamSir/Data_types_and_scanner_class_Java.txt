@@ -1,0 +1,171 @@
+Data Types In Java:
+
+Data - collection of information
+========================================================
+ int age;    //declare
+ 
+ age=21;     // define
+ 
+
+ -- Different size and their values which can be stored in the variable.
+ 
+ Types of data types:-
+ 
+ 1)primitive data type
+ 2)non primitive data types
+ 
+  1)primitive data type:-
+  
+        boolean flag = false;  //1 bit
+		char ch ='w';    //2 byte
+		short v =88;     //2 byte
+        byte b = 11;    //1 byte
+		int age=87;      // 4 byte
+		long l = 77887887777777l;  //8 byte
+		float f =10.2f;   // 4 byte
+		double db = 10.888;  // 8 byte
+		
+		
+		
+		
+  2)non-primitive datatypes
+  
+  dataypes which is created by you guyzz...!!!
+  they are refere to object
+  
+  1)String s="My class"; 
+  2)class
+  3)Arrays etc.
+   4)Inteface
+		
+===================================================================
+
+
+      int z ;   //declare
+        z = 8;     // define
+
+
+
+	public class DataTypesExample {
+
+	public static void main(String[] args) {
+		 
+		DataTypesExample dt = new DataTypesExample();
+		int res =dt.addNum(10, 20);
+		System.out.println(res);
+	
+	}
+	
+	
+	public int addNum(int a, int b) {
+		int c = a + b;
+		return c;
+	}
+
+}
+
+==================================================================
+To take input from user:
+
+ - we used scanner class to take input from user
+
+
+
+Example -1
+
+public static void main(String[] args) {
+	 Scanner sc = new Scanner(System.in);
+	 System.out.println("Enter your name :");
+	 String name = sc.next();
+	 greeting(name);
+		
+	}
+	
+	public static long squareNum(long a) {
+		return a * a;
+	}
+	
+	public static void greeting(String name) {
+		System.out.println("Hey Welcome "+name);
+	}
+
+=========================================================
+
+Example -2
+
+public static void main(String[] args) {
+	 Scanner sc = new Scanner(System.in);
+	 System.out.println("Enter no to check square:");
+	 long s = sc.nextLong();
+	long x = squareNum(s);
+	System.out.println(x);
+	}
+	
+	public static long squareNum(long a) {
+		long b = a * a;
+		return b;
+	}
+==================================================================
+
+public class HelloWorld {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter you first number:");
+		int a =sc.nextInt();
+		
+		System.out.println("Enter your second number");
+		int b = sc.nextInt();
+		
+		CalculatorExample cal = new CalculatorExample();
+		int div =cal.divNum(a, b);
+		System.out.println("division is:"+div);
+				
+	}
+	
+
+-------------------------------------------------------------------
+public class CalculatorExample {
+
+       public int addNum(int num1, int num2 ) {
+    	   int add =num1 + num2;
+    	   return add;
+       }
+       
+       public  int subNum(int num1, int num2) {
+    	   int sub =num1 - num2;
+    	   return sub;
+       }
+       
+       public int multNum(int num1 , int num2) {
+    	   int mul = num1 * num2;
+    	   return mul;
+    	   
+       }
+       
+       public int divNum(int a, int b) {
+    	   int div = a%b;
+    	   return div;
+       }
+       
+       
+       
+
+}
+=======================================================
+
+
+1)Take input from user
+int a;
+int b;
+int c;
+
+create a new class CalculatorExample
+write a method in it - addNum
+and print the result in main method
+
+2)Take a single input from user
+and write method squareNum(int a)
+and print square of that entered number

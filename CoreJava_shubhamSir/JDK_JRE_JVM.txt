@@ -1,0 +1,32 @@
+JDK  - Java Developement Kit
+
+---------------------------------------------------------
+  - JDK is a software development kit required to develop application in java.
+  -When you download the JDK, JRE is also downloaded with it.
+  - JDK also contains some development tools for developing java application 
+    ex.--> Java Debugger,JavaDoc,Java Compiler(javac)
+	
+================================================================================
+
+JRE - Java Runtime Environment
+
+   - JRE is a software package that provides java class libraries, JVM etc that required to 
+   run java application.
+   -JRE provides environment to run your java application.
+   
+==================================================================================
+
+JVM - Java Virtual Machine
+    
+   - JVM is a responsible to run your java program.
+   - When you run your java code then java compiler compiles java code to byte code.
+   - Then JVM translates that bytecode  into native machine code-(set of instructions that your CPU executes directly)
+   - JVM is responsible to call your main method.
+   - JVM contains class loader, runtime data area ,execution engine, libraries etc.
+   - JVM comes with JIT (Just in time) compiler that converts java source code into machine code.
+
+JVM Offers you the features of -
+
+    1)Garbage Collector
+    2)Security
+    3)memory management

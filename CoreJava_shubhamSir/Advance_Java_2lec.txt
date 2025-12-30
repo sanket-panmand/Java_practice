@@ -1,0 +1,104 @@
+Prepared Statement
+
+=========================================================
+
+public class InserJdbc {
+	
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		String querry= "insert into student values(?,?,?,?)";
+		Class.forName("com.mysql.cj.jdbc.Driver");  //load the driver class
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo","root","Shubpiyo@1511");
+		PreparedStatement pst = con.prepareStatement(querry);
+		pst.setInt(1, 6);
+		pst.setString(2, "Manish");
+		pst.setInt(3, 25);
+		pst.setString(4, "Manish1411@gmail.com");
+		pst.execute();
+		
+		//con.close();    //close the connection
+
+	}
+
+}
+
+
+===================================================================
+1)Difference between prepared statement and statement
+
+==================================================================
+callable statement:
+
+
+Stored procedure / function
+
+public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		String querry= "{? = call addingNum(?,?)}";
+		Class.forName("com.mysql.cj.jdbc.Driver");  //load the driver class
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo","root","Shubpiyo@1511");
+		CallableStatement pst = con.prepareCall(querry);
+		
+		pst.setInt(1, 6);
+		pst.setInt(2, 7);
+	
+		pst.registerOutParameter(1, Types.INTEGER);
+		pst.execute();
+		//con.close();    //close the connection
+
+		
+		
+		//
+		
+	}
+
+==================================================================
+
+Java Servlet
+
+1.It is a technologogy which is used create web application.
+2.servelet is server side programming this means server is mandatory to run your program.
+3.servelet is a component which serves the client request and generate dynamic content.
+4.Servelet interacts with web client through request-response things.
+5.All clients request are send to the web server through servlet.
+6.Servlet receives client request in the form of HTTP Request.
+
+  HTTP Request - GET, PUT, POST, DELETE
+  
+
+Features of Servlet:
+1.Servlet is a platform independent
+2.Security
+3.Session managemenet.
+
+
+=============================================================================
+Work of servelet
+
+1.Servlet receives client request in the form of HTTP Request.
+2.Extract  information from HTTP request means which kind of request is this(GET, PUT, POST, DELETE)
+  from where request comes(IP address)
+3.Doing content generation or business logic process.
+4.send the response in the form of HTTP Response
+
+HTTP Response
+    1.Status Line
+	
+	HTTP/1.1  200 OK
+	
+	2.Response Headers
+	3.Message
+	
+====================================================
+
+Difference between get, put , post ,delete
+
+
+	
+	
+
+    
+
+
+
+
+
+

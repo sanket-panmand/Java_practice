@@ -1,0 +1,51 @@
+
+
+
+public class HelloWorld {
+
+	public static void main(String args[]) {
+		
+		int res =CalaculatorExample.addNum(10, 20);
+		System.out.println(res);
+		
+		int res1 =CalaculatorExample.addNum(20, 20);
+		System.out.println(res1);
+		
+		CalaculatorExample ce = new CalaculatorExample();
+		int res2 = ce.sum(10,20,30,40,50);
+		System.out.println(res2);
+		
+		int finalRes =ce.mult(1,5,3,4);
+		System.out.println(finalRes);
+	}
+}
+
+===========================================================
+
+
+public class CalaculatorExample {
+
+	public static int addNum(int a, int b) {
+		int add = a + b;
+		return add;
+	}
+	
+	// (...) --> ellipsis  -- Varargs(Variable arguments)
+	public int sum(int...numbers) {
+		int res =0;
+		for(int num :numbers) {
+			res = res + num;
+		}	
+		return res;
+	}
+	
+	public int mult(int...nums) {
+		int ans = 1;
+		for(int a :nums) {
+			ans = ans * a;
+		}
+		return ans;
+	}
+	
+	
+}

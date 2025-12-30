@@ -1,0 +1,72 @@
+Recrusive Function
+=======================================================
+ -Recrusive is the technique of making a function call itself. 
+ -This technique provides a way to break
+ complicated problems down into simple problems which are easier to solve.
+ -This will make the code compact but it is complex to understand.
+ 
+ 
+ ex-1)
+ 
+ public class RecrusiveFunctionExample {
+
+	static int count = 0;
+	public static void main(String[] args) {
+		sayHi();
+	}
+	
+	public static void sayHi() {		
+		if (count < 10) {
+			System.out.println("Hii");
+			count++;
+			sayHi();
+		}
+		
+	}
+
+}
+===============================================================
+
+Factorial Using for loop
+
+static int fact =1;
+	public static void main(String[] args) {
+		factorialOfNumber(5);
+	}
+	
+	
+	public static void factorialOfNumber(int num) {
+		
+		for(int i=1; i<= num; i++ ) {
+			fact = fact * i;
+		}
+		
+		System.out.println("Factorial of "+num+" is :"+fact);
+		
+	}
+
+
+================================================================
+
+factorial using recrusion
+
+public class FactorialOfNumberUsingRecrusion {
+
+	static int fact =1;
+	public static void main(String[] args) {
+		int res =factorialOfNumber(5);
+		System.out.println("Factorial of 5 is :"+res);
+	}
+	
+	
+	public static int factorialOfNumber(int num) {	
+		if (num == 1) {
+			return 1;
+		} else {    
+             return (num * factorialOfNumber(num-1));
+		}
+	
+	}
+
+}
+====================================

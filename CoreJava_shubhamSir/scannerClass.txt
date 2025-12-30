@@ -1,0 +1,46 @@
+Scanner Class- to take input from user
+========================================
+
+Scanner sc = new Scanner(System.in);
+	
+		System.out.println("============================");
+		System.out.println("Enter your fist name:");
+		String s1 = sc.next();
+		
+		System.out.println("Enter your last name:");
+		String s2 = sc.next();
+
+		System.out.println(s1+" "+s2);
+		
+		
+		
+	==================================================================	
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter you first number:");
+		int a = sc.nextInt();
+		System.out.println("Enter you second number:");
+		int b = sc.nextInt();
+		
+		
+		System.out.println("Enter you opertion to perform:");
+		System.out.println("add sub multi div");
+		String opName = sc.next();
+		
+		
+		
+		if(opName.equalsIgnoreCase("add")) {
+			System.out.println(a+b);
+		}else if(opName.equalsIgnoreCase("sub")) {
+			System.out.println(a-b);
+		}else if(opName.equalsIgnoreCase("multi")) {
+			System.out.println(a*b);
+		}else if(opName.equalsIgnoreCase("div")){
+			System.out.println(a/b);
+		}else {
+			System.out.println("please enter correct input");
+		}
+		
+	}
+		
+	}

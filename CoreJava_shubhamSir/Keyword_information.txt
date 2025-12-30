@@ -1,0 +1,14 @@
+Keyword information
+
+=====================================================
+
+Static -
+
+   - Static is a keyword which we are using with methods , variables and block
+   -Staic keyword used for memory management.
+   -Static is always belongs to class than an instance(like object) of the class
+   
+   
+fianl -
+   - final is keyword once you declare you cant change the value of it.(it is like constant)
+   -final is always used with variables, methods, class

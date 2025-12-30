@@ -1,0 +1,79 @@
+JDK, JVM, JRE ?
+
+=====================================
+JDK - Java Developement Kit
+JRE - Java Run time Environment
+JVM- Java Virtual Machine
+
+JDK - 
+It is a
+Java Software Development environment which is used to develop java application.
+
+JDK includes :
+   1)JRE
+   2)Development Tools (javac, javadocs, java etc)
+   
+================================================================   
+   JRE -
+
+It provides environment to run java program
+
+   includes-
+   1)implementation of JVM
+   2)classes required to run the java program
+   3)property files
+   
+=================================================================
+
+JVM -
+
+- We called it as virtual machine because it is not physically exists.
+- it is a specification that provides a runtime environment in which java bytecode is execuated.
+-JVM is responsible to run your program.
+
+includes-
+     1)ClassLoader(Loading, Linking and byte code verifying)
+	 2)Execuation work
+	 3)main methods calls by JVM.
+	 4)jvm also called as interpreter.
+	 
+===============================================================
+   
+   
+   Java Variables
+   
+   int a = 10;
+   
+   Types of Variables
+ 
+     1)local variables
+	 2)instance variables /global variable
+	 3)static variables
+	 
+
+	 static - static  - ok
+	 staic - nonstatic - not ok
+	 nonstatic - static  - ok
+	 nonstatic - notstatic - ok
+======================================================================
+	 
+	public class Test {
+int b =10;    //  global variable / instance
+static int c = 20;  // static variable
+ 
+	public static void main(String[] args) {
+		System.out.println("Hi.......");
+		System.out.println(c);
+		Test aa = new Test();
+		aa.print();
+	}
+	
+	
+	public void print() {
+		int a = 10;    //local variable
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println(c);
+	}
+
+}

@@ -1,0 +1,158 @@
+Constructor
+======================================================
+Types of constructor
+
+1.Default constructor
+2.parameterized constructor
+
+- constructor is special method
+- it doesn't have return type
+- if you are writing return type to constructor it is then behaving as method of the class
+- it is block of codes similar to the method.
+- it is called when object of class is created.
+- constructor name is similar as of class name.
+- a constructor must have no explicit return type;
+- constructor is used to initialize the class instance(global) varibles;
+
+
+==================================================================
+Imp notes :
+
+
+-In the  class we can have multiple parametrized constructor.
+-but we can have only one default constructor in the same class.
+- if you are writing parametrized constructor in a class then it is mandatory to write default constructor.
+- and if parametrized constructor is not written then you can or cannot write default constructor.
+
+example
+
+//Default Constructor
+
+	public Vehicle() {
+                                                    
+	}
+	
+
+
+//Parametrized Constructor
+
+	public Vehicle(String vehicleName,int noOfWheels, String companyName) {
+		this.vehicleName = vehicleName;
+		this.noOfWheels = noOfWheels;
+		this.companyName = companyName;
+	}
+	
+	public Vehicle(String vehicleName,int noOfWheels) {
+		this.vehicleName = vehicleName;
+		this.noOfWheels = noOfWheels;
+	}
+	
+	public Vehicle(String vehicleName) {
+		this.vehicleName = vehicleName;
+	}
+==================================================================================
+
+
+	public Fan(String fanName, int wings, int price) {   //parametarized constructor
+		super();
+		this.fanName = fanName;
+		this.wings = wings;
+		this.price = price;
+	}
+
+	public Fan() {      //default constructor
+	}
+	
+	
+	
+	
+	
+=======================================================================
+		
+	
+creation of object using default and parametarized constructor
+
+	   Fan fan = new Fan();                   // calling default constructor
+		
+		Fan fan2 = new Fan("bajaj",4,500);  // calling parametrized constructor
+		
+		System.out.println(fan2.fanName);
+=========================================================================
+
+Copy Constructor :
+
+Copy constructor in a java is a special constructor used to create new object by copying all the state of existing object of same class.
+This is we can typically used when we want to create a new object that is an exact copy of an existing object.
+
+
+example--
+
+
+	
+	// Copy constructor
+	public Books(Books book) {
+		this.title = book.title;
+		this.author = book.author;
+		this.price = book.price;
+		this.publicationYear = book.publicationYear;
+		
+	}
+
+
+------------------
+
+	public static void main(String[] args) {
+		
+		Books book1 = new Books();
+		book1.setTitle("Yayati");
+		book1.setAuthor("V. S. Khandekar");
+		book1.setPrice(1200);
+		book1.setPublicationYear(2001);
+		
+		
+		Books book2 = new Books(book1);
+		System.out.println(book2.getTitle());
+	
+
+	}
+==================================================
+
+
+Constructor Overloading :
+
+crating multiple parametrized constructor with different arguments in it calling as constructor oveloading
+
+===================================================
+
+Constructor chaining :
+
+calling the one constructor from another constructor in the same class or its superclass.
+Usually we are using this  to avoid code duplication and to ensure that common initialization takes place.
+
+Two types of constructor chaining:
+1)calling one constructor from another constructor of a same class.(within same class)
+we are using this keyword to call so.
+
+ex -  public Books(String title, String author, int price, int publicationYear) {
+		this(title,author);
+
+		this.title = title;
+		this.author = author;
+		this.price = price;
+		this.publicationYear = publicationYear;
+		
+		
+	}
+
+
+      public Books(String title, String author) {
+		this.title = title;
+		this.author = author;
+		
+	}
+
+2)calling parent constructor from child constructor(Between superclass and subclass)
+ex - 	public Books() {
+		super();
+	}
+	

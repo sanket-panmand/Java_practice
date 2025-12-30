@@ -1,0 +1,20 @@
+some important programs
+
+1. Reversal of String. 
+2. Reverse each word of a string
+3. String palindrome
+4. Duplicate elements in an array
+5. Second largest element in an array
+6. Anagram program
+7. Find missing number in an array
+8. Find the first repeated character in the given string
+9. Easy Star pattern programs
+10. Reverse string with preserving position of spaces
+11. Matrix multiplication in java
+12. Swap two numbers with out using third variable
+13 Armstrong number
+14. Factorial program
+15. Palindrome number
+16. Fibonacci series
+17. Prime number
+18. Write a program which prints table of enterend number.

@@ -1,0 +1,62 @@
+Main Method :
+
+- Main method is a starting point(entry point) of your java project to start the execution(run) of program.
+- without main method we cannot run the java program.
+-Every java application(project)has at least one class and one main method.
+
+
+access modifier - visibility(to access) is decided by access modifier
+======================================================================
+public
+private
+default
+protected
+
+public - the public modifier makes it accessible from anywhere in the application.
+           hence JVM can call this method from anywhere
+
+static - The static keyword makes your main method as class method
+          so that it can be called by class name without creating object of the class.
+        -JVM load the class into the memory and call the main method without creating object of that class.
+
+void - (return type) - which returns nothing
+main Method -> it is method name.
+
+----------------------------------------------------------------------
+
+variables:
+
+- variables are used to hold(store) the data.
+-varibale are the data containers that save the data values during java prohram execuation.
+-variable is a memory location name for the data.
+
+   ex.-> int num1 = 98;
+  so here num1 -> is a variable
+
+
+                                    
+	public static void main(String[] args) {
+		    int a = 30;
+		    int b = 50;
+		    int sum = a + b;
+		    System.out.println(sum);
+		    
+		
+	} 
+	
+   
+   Types of Variables
+ 
+     1)local variables 
+
+         are the variables which present inside the method.
+
+	 2)instance variables /global variable / public variables
+
+         - are the variables which presents inside class  but outside the method
+
+	 3)static variables
+	 - it is only present inside the class body, but we cannot create static varible inside the method.
+=================================================================================
+
+                   

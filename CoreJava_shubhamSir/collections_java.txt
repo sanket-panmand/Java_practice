@@ -1,0 +1,689 @@
+Collections
+==============================================================
+
+- collections is a framework which always deals with object.
+
+1.Wrapper class
+  -  used to convert primitive into object (autoboxing)
+     and object into primitive (unboxing)
+	 
+	 Primitive Types         Wrpper Class
+	 int                         Integer
+	 boolean                     Boolean
+	 char                        Character
+	 byte                        Byte
+	 short                       Short
+	 long                        Long
+	 float                       Float
+         double                      Double	 
+   
+
+2. Use of wrpper class
+    -collection need object so wrapper class required
+
+	
+========================================================================
+  Collections Framework-
+  
+  -Collections is a framework that provides an architecture to store, retrieve(fetch),
+  manipulate group of objects.
+
+  -java collections means single unit of objects.
+ - collections always deals with objects(object of class or wrapper class) hence we are using wrapper classes.
+-  how you are structuring(arranging) your data is nothing but collections.
+
+  -operation includes-
+    
+ 1.insertion
+ 2.searching
+ 3.sorting
+ 4.delete
+ 5.manipulation
+ 
+
+ 
+     	//List - interface
+		//ArrayList - child class of List interface
+		ArrayList<Integer> arrList = new ArrayList<>();	 
+		List<Integer> listArr = new ArrayList<>();
+-----------------------------------------------------------------------------------
+
+Framework means-
+
+- gives you readymade (predefined) architecture.
+- framework represents set of classes and interfaces
+
+
+ 
+==========================================================================================
+
+Iterable Interafece :
+
+- it is root interface for all the collections framework
+- Our collecion(Interface) ---->extends   Iterable(Interface)
+- List,Queue, Set (Interface) -----> extends  Collections(Interface)
+
+- All the subclasses(like arraylist, linkedlist etc) of collections framwork contain Iterable.
+
+
+It contains only one abstact method
+
+Iterator<T> iterator();
+     
+
+T -> Generic  
+
+=========================================================================================
+List
+
+
+- List is a interface
+- List is child interface of collection interface.
+-We can store data in a list collection in order
+-It can have duplicate values
+-we can save null elements also in a list
+
+*Ordered data
+*Duplicate also allowed.
+===================================================================================================
+
+Arraylist
+
+-it is a growable array
+-it grows at run time
+-here you no need to declare size 
+
+
+Whenever an instance of ArrayList in Java is created then by default the capacity of Arraylist is 10.
+Since ArrayList is a growable array, it automatically resizes itself whenever a number of elements
+in ArrayList grow beyond a threshold.
+
+Questions :-
+
+What is difference between List and arraylist?
+what is difference between Arraylist and array?
+	        List<String> nameArrayList = new ArrayList<>();   // growable array - which grows at runtime
+	        nameArrayList.add("Akshay");  
+	        nameArrayList.add("Mahesh"); 
+	        nameArrayList.add("Raghav");
+	        nameArrayList.add("Amit");
+	        nameArrayList.add("Raman");
+	        nameArrayList.add("Mahesh");
+nameArrayList.add
+
+	        for(String aa :nameArrayList) {
+	        	System.out.println(aa);
+	        }
+	        System.out.println("==============================");
+	        
+	        //collection   --> interface  and collections --> util class(common used methods)
+	        
+	        System.out.println(nameArrayList.get(5));    /// return 2 index ka elemnt 
+	  
+	        System.out.println("===========================");
+	        nameArrayList.remove(3);
+	        
+	        for(String aa :nameArrayList) {
+	        	System.out.println(aa);
+	        }
+	        
+	        System.out.println("===========================");
+	        
+	        System.out.println(nameArrayList.get(3));
+	        
+	        System.out.println("===========================");
+	        
+	        System.out.println(nameArrayList.contains("Mahesh"));
+	        System.out.println("===========================");
+	        Collections.sort(nameArrayList);
+
+	        for(String aa :nameArrayList) {
+	        	System.out.println(aa);
+	        }
+	        
+	        System.out.println("===========================");
+	        Collections.sort(nameArrayList,Collections.reverseOrder());
+
+	        for(String aa :nameArrayList) {
+	        	System.out.println(aa);
+	        }
+	        
+//	       Iterator<String> itr =nameArrayList.iterator();
+//	       while(itr.hasNext()) {
+//	    	   System.out.println(itr.next());
+//	       }
+	        
+	}
+
+	
+		
+		
+		
+==============================================================================
+
+
+LinkedList :
+
+- Linkedlist is faster than arraylist as it uses doubly linked list internally.
+- Manipulation of data in linkedlist is faster than arraylist as no bit shifting is required in memory
+-linked list is better choice for manipulating the data.
+-Linkedlist is a linear data structure where elements are not stored in contiguous location.
+-There is no default capacity for linked list as it does not allocate memory to the element before the elements are added to the list.
+
+Example:
+		List<Integer> linkedList = new LinkedList<>();
+		linkedList.add(1);
+		linkedList.add(1);
+		linkedList.add(4);
+		linkedList.add(6);
+		
+		
+		Iterator<Integer> itr = linkedList.iterator();
+		while(itr.hasNext()) {
+			System.out.println(itr.next());
+		}
+		
+		
+		
+		List<String> stringLinkedList = new LinkedList<>();
+
+		stringLinkedList.add("abc");
+		stringLinkedList.add("pqr");
+		stringLinkedList.add("xyz");
+		stringLinkedList.add("str");
+		
+		Iterator<String> itr2 = stringLinkedList.iterator();
+		while(itr2.hasNext()) {
+			System.out.println(itr2.next());
+		}
+
+1)difference between arraylist and linkedlist?
+
+
+==============================================================================
+
+Vector :
+
+
+- It is also same like dynamic array which grows in size as per required.
+- We can store n number of elements in vector
+- vector is synchronized.
+- it is deprecated that means it contains legacy methods which are not part of collections framework now.
+
+Synatax:
+List<Integer> lst = new Vector<>();
+
+==================================================================================
+
+Stack:
+
+- Stack is also used to store the data.
+- It is a LIFO - Last in first out means the element which you inserted last will be your first element while popping.
+- for inserting data in stack we are using push method
+- for fetching/removing data we are using pop methods
+
+Example ->
+		Stack<String> stk = new Stack<>();
+		stk.push("Shubahm");
+		stk.push("Akshay");
+		stk.push("Nilesh");
+		stk.push("Mahesh");
+		
+			
+		System.out.println(stk.pop());
+		System.out.println(stk.pop());
+		System.out.println(stk.pop());
+		System.out.println(stk.pop());
+===================================================================================
+
+
+Set 
+  
+- Set is an interface.
+- No duplicate allowed
+- unordered
+-
+
+
+Hashset -
+
+  - Hashset is class which are used to create collection that uses a hash table for the storing purpose.
+ -  hashset stores the element by using one mechanish called as " hashing ".
+-   hashset contains unique elements only.
+-   Hashset allows to store null values.
+-   Hashset insert the value in the table according to hashcode of that perticular element.
+-   hashset is best approach to search the element
+-   hashsets initial capicity is 16.
+
+syntax 
+Set<String> nameSet = new HashSet<>();
+
+
+
+Set<String> fruitSet = new HashSet<>();
+		fruitSet.add("Apple");
+		fruitSet.add("Mango");
+		fruitSet.add("Guava");
+		fruitSet.add("Orange");
+		fruitSet.add("Bananas");
+		fruitSet.add("Pinapple");
+		fruitSet.add("Grapes");
+
+		Iterator<String> ite = fruitSet.iterator();
+		while (ite.hasNext()) {
+			System.out.println(ite.next());
+		}
+		System.out.println("============================");
+		fruitSet.remove("Apple");
+		Iterator<String> ite2 = fruitSet.iterator();
+		while (ite2.hasNext()) {
+			System.out.println(ite2.next());
+		}
+		
+		System.out.println(fruitSet.contains("Bananas"));
+		fruitSet.clear();
+		
+		Iterator<String> ite3 = fruitSet.iterator();
+		while (ite3.hasNext()) {
+			System.out.println(ite3.next());
+		}
+		
+		System.out.println("=================================");
+		System.out.println(fruitSet.isEmpty());
+	}
+
+
+==========================================================================================
+LinkedHashSet -
+
+-Linkedhashset is a class and it is a hashtable and linkedlist implementation of the set interface.
+-LinkedHashSet also contain unique elements(no duplicate)
+-LinkedHashSet always maintain the insertion order.
+
+syntax:
+Set<String> nameSet = new LinkedHashSet<>();
+
+
+example:
+Set<String> carName = new LinkedHashSet<>();
+		carName.add("Nexon");
+		carName.add("Kia");
+		carName.add("MG-Hector");
+		carName.add("Maruti800");
+		carName.add("Rapid");
+		carName.add("Swift");
+		carName.add("Vento");
+		carName.add("Vento");
+		
+		Iterator<String> itr = carName.iterator();
+		while(itr.hasNext()) {
+			System.out.println(itr.next());
+		}
+
+==============================================================
+TreeSet -
+
+  - it also contains unique elements(non duplicate)
+ - it stores the elements in tree structure.
+- it maintain the ascending order of inserted elements.
+- here no null element is allowed
+
+
+Example :
+
+TreeSet<String> countryName = new TreeSet<>();
+		countryName.add("India");
+		countryName.add("Paris");
+		countryName.add("Australia");
+		countryName.add("Germany");
+		countryName.add("Singapore");
+		countryName.add("South Korea");
+		
+		System.out.println(countryName);
+		System.out.println("===================================");
+		Iterator itr =countryName.descendingIterator();
+		while(itr.hasNext()) {
+			System.out.println(itr.next());
+		}
+		System.out.println("===================================");
+		System.out.println(countryName.descendingSet());
+		
+		Object aa= countryName.clone();
+		System.out.println("after clone....");
+		System.out.println(aa);
+		
+	}
+=========================================================
+
+for reverse order
+
+
+	
+		SortedSet<Integer> nums = new TreeSet<>(Comparator.reverseOrder());
+		nums.add(23);
+		nums.add(12);
+		nums.add(9);
+		nums.add(56);
+		nums.add(23);
+		nums.add(33);
+		nums.add(78);
+		
+		for(Integer aa : nums) {
+			System.out.println(aa);
+		}
+		
+===========================================================		
+
+
+
+Que) - What is shallow copy and what is deep copy in java?
+
+clone() -> deep copy
+
+======================================================================================================================
+
+Queue
+
+-Basically it is FIFO(First in First out)
+-FIFO means first element is removed first and last is removed at a last
+- elements are added from end and removed from front
+
+
+Priority Queue-
+-A priority queue is used when the object are supposed to be performed on the basic of priority.
+-As Queue performs FIFO but sometimes there will be a need where we have to proceed our object as per priority
+then priority queue comes into existence.
+-elements of priority queue is ordered according to their natural ordering or by a comparator provided by queue.
+-element with maximum ASCII value will have highest priority.
+-null not allowed
+-initial capacity is 11
+
+
+Example
+
+	public static void main(String[] args) {
+		
+		Queue<String> names = new PriorityQueue<>();
+		names.add("Ruhi");
+		names.add("Zuber");
+		names.add("Piyush");
+		names.add("Omair");
+		names.add("Laxmi");
+		names.add("Lalit");
+	
+		System.out.println(names.peek());
+		System.out.println(names.poll());
+		System.out.println(names.poll());
+		
+		System.out.println(names.peek());
+		
+
+	}
+
+}
+==============================================
+
+		public static void main(String[] args) {
+		
+		Queue<Integer> nums = new PriorityQueue<>();
+		nums.add(2);
+		nums.add(5);
+		nums.add(1);
+		nums.add(6);
+		nums.add(2);
+		
+		System.out.println(nums.peek());
+		
+		System.out.println(nums.poll());
+		System.out.println(nums.peek());
+	}
+
+
+
+
+- Queue is always works on front and rear part
+===============================================================
+
+Deque = doubly ended queue
+
+- it is an interface which extends queue interface.
+-it supports adding and removing of elements from both ends.
+ so, this is reason why your deque is used as stack as well as queue
+
+	Deque<String> dequeObj = new ArrayDeque<>();
+		dequeObj.add("Sagar the iron man");
+		dequeObj.add("Thor");
+		dequeObj.add("Captain America");
+		dequeObj.add("Hulk");
+		
+		Iterator<String> itr = dequeObj.iterator();
+		while(itr.hasNext()) {
+			System.out.println(itr.next());
+			
+		}
+		
+		System.out.println("==============================");
+		dequeObj.removeLast();
+		Iterator<String> itr2 = dequeObj.iterator();
+		while(itr2.hasNext()) {
+			System.out.println(itr2.next());
+			
+		}
+
+=======================================================================================
+
+
+Array :
+
+	public static void main(String[] args) {
+		int a =10;
+        int r[]= {34,55,78,43};
+        
+        int b[] = new int[3];   // 0 1 2 
+        b[0] = 67;
+        b[1] = 56;
+        b[2]= 54;
+        b[3]= 68;
+        b[4] =99;
+          
+        String str[] = new String[5];
+        	boolean c[] = new boolean[4];	
+        		
+        		
+    for(int i =0; i<=4; i++) {
+    	System.out.println(b[i]);
+    }
+     
+	}
+===============================================================
+
+**********************
+
+
+
+public static void main(String[] args) {
+		
+		List<Integer> numList = new ArrayList<>();
+		numList.add(1);
+		numList.add(40);
+		numList.add(6);
+		numList.add(10);
+		numList.add(100);
+		numList.add(100);
+		
+		
+		Iterator<Integer> itr = numList.iterator();
+		while(itr.hasNext()) {
+			System.out.println(itr.next());
+		}
+		
+		for(Integer i:numList) {
+			System.out.println(i);
+		}
+		
+		Collections.sort(numList);
+		System.out.println("After sorting....");
+		for(Integer i:numList) {
+			System.out.println(i);
+		}
+		System.out.println("Max value--------------");
+		System.out.println(Collections.max(numList));
+		System.out.println("Min value--------------");
+		System.out.println(Collections.min(numList));
+
+	}
+======================================================================================
+
+
+
+
+
+
+package com.syntel.program.oops;
+
+import java.util.Objects;
+
+public class Flowers {
+
+	private int id;
+	private String name;
+	private int price;
+	
+	public Flowers() {
+		
+	}
+
+	public Flowers(int id, String name, int price) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.price = price;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(getName());
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+//		if(this == obj) return true;
+//		if(!(obj instanceof Flowers)) return false;
+		Flowers that =(Flowers)obj;
+		return this.getName().equals(that.getName());
+	}
+
+
+
+	
+	
+}
+-------------------------------------------------------------------
+
+
+	public static void main(String[] args) {
+		
+	Set<Flowers> flowerSet = new HashSet<>();
+	flowerSet.add(new Flowers(1,"Rose",15));
+	flowerSet.add(new Flowers(2,"Lotus",20));
+	flowerSet.add(new Flowers(3,"Lilly",5));
+	flowerSet.add(new Flowers(4,"Jasmine",10));
+	flowerSet.add(new Flowers(4,"Jasmine",10));
+
+	for(Flowers fl :flowerSet) {
+		System.out.println(fl.getId()+" "+fl.getName()+" "+fl.getPrice());
+	}
+	
+	}
+
+==========================================================================
+ArrayList Example with predefined methods............
+--------------------------------------------------------------------------
+
+public class ListCollection {
+
+	public static void main(String[] args) {
+		List<String> fruitList = new ArrayList<>();
+		fruitList.add("Apple");
+		fruitList.add("Orange");
+		fruitList.add("Guava");
+		fruitList.add("Pinapple");
+		fruitList.add("Banana");
+		fruitList.add("Apple");		
+		for(String a : fruitList) {
+			System.out.println(a);
+		}		
+		fruitList.remove(3);
+		System.out.println("After removal....");
+		for(String a : fruitList) {
+			System.out.println(a);
+		}
+		System.out.println("================================");
+		System.out.println(fruitList.get(4));
+		System.out.println("================================");
+		fruitList.set(4, "Chiku");
+		for(String a : fruitList) {
+			System.out.println(a);
+		}
+			
+		System.out.println(fruitList.size());
+		
+		System.out.println(fruitList.contains("Pinapple"));
+		System.out.println(fruitList.isEmpty());
+
+		Collections.sort(fruitList);
+		System.out.println("After sorting...");
+		for(String a : fruitList) {
+			System.out.println(a);
+		}
+		Collections.sort(fruitList,Collections.reverseOrder());
+		System.out.println("After reverse sorting...");
+		for(String a : fruitList) {
+			System.out.println(a);
+		}	
+		
+
+		fruitList.clear();
+		System.out.println(fruitList.isEmpty());
+		
+	}
+
+}
+===========================================================================
+
+Collections -
+
+ It is a Utility Class. Here it contains only a static methods.
+It defines several utility methods like sort(), synchronizedList(), unmodifiableList(), reverse(), shuffle(), etc. These methods are used to operate and manipulate the data in Collection objects. 
+
+
+
+Collection -
+
+It is an Interface. It contain static default and abstract methods.
+It defines the basic methods that all collections will have, such as add(), remove(), size(), isEmpty(), iterator(), etc. 
+

@@ -1,0 +1,89 @@
+JDK, JVM, JRE ?
+
+=====================================
+JDK - Java Developement Kit
+JVM- Java Virtual Machine
+JRE - Java Run time Environment
+
+JDK -
+
+JDK includes 
+   1)JRE
+   2)Developement Tools (javac, javadocs,java etc)
+   
+================================================================   
+   JRE -
+   includes-
+   1)implementation of JVM
+   2)classes required to run the java program
+   3)property files
+   
+=================================================================
+
+JVM -
+
+- We called it as virtual machine because it is not physically exists.
+- it is a specification that provides a runtime environment in which java bytecode is execuated.
+
+
+includes-
+     1)ClassLoader(Loading, Linking and byte code verifying)
+	 2)Execuation work
+	 3)main methods calls by JVM.
+	 4)jvm also called as interpreter.
+	 
+===============================================================
+   
+   
+   Java Variables:
+ 
+   - are those which actually stores data.
+
+          int p;   //create or declare
+		 p =45;   //value assign or  define
+
+   int a = 10;    // declare and define
+
+
+
+   
+   Types of Variables
+ 
+     1)local variables 
+
+         are the variables which present inside the method.
+
+	 2)instance variables /global variable / public variables
+
+         - are the variables which presents inside  the class but outside the method
+
+	 3)static variables
+	 - it is only present inside the class body, but we cannot create static varible inside the method.
+=================================================================================
+
+	 static - static  - ok
+	 staic - nonstatic - not ok
+	 nonstatic - static  - ok
+	 nonstatic - notstatic - ok
+======================================================================
+	 
+	public class Test {
+int b =10;    //  global variable / instance
+static int c = 20;  // static variable
+ 
+	public static void main(String[] args) {
+		System.out.println("Hi.......");
+		System.out.println(c);
+		Test aa = new Test();
+		aa.print();
+	}
+	
+	
+	public void print() {
+		int a = 10;    //local variable
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println(c);
+	}
+
+}

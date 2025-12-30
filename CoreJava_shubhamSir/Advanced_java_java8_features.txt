@@ -1,0 +1,486 @@
+Java 8 features
+==========================================================
+
+1)Java Functional Interface
+
+   
+ - it is an interface that contains only one abstract method
+ that means it have only one function to execuate
+ -lambda expression ( -> ) is expressed  as instance of functional interface.
+ - functional inteface can have any number of default(non abstarct) and static method.
+ -Functional Interface is also known as Single abstarct method(SAM).
+ -@FunctionalInterface is annotation used to define your interface as functional interface
+ 
+ 
+ Functional Interface provided by java :
+   1)Runnable
+   2)Comparable
+   3)ActionListener
+   4)callable
+   
+=====================================================================================
+
+
+@FunctionalInterface
+public interface ArithematicInterface {
+
+	int calculateOperation(int a, int b);
+
+	public static void sayHi() {
+		System.out.println("Hi");
+	}
+	
+	public static void sayHiiii() {
+		System.out.println("Hi");
+	}
+	
+	default void sayHello() {
+		
+	}
+}
+
+=================================================================================
+
+public class FunctionalInterfaceExample{
+
+	public static void main(String[] args) {
+
+		ArithematicInterface add = (a, b) -> {
+			return a + b;
+		};
+		System.out.println("Addition is :"+ add.calculateOperation(2, 3));
+		
+		ArithematicInterface mult = (a ,b) -> a * b;
+		System.out.println("Multiplication is :"+ mult.calculateOperation(2, 3));
+
+		ArithematicInterface.sayHi();
+		add.sayHello();
+
+	
+	}
+
+
+
+}====================================================================================
+   
+  -four main kinds  of functional interface
+1)consumer  - takes only one argument and no retun value
+2)predicate - takes only one argument and retuns value ->only true/false(boolean)
+3)function
+4)supplier
+
+
+1)consumer 
+
+Functional Varients :-
+
+   1)DoubleConsumer
+
+    ex->  DoubleConsumer dc =(d) ->System.out.println(d+d);
+        dc.accept(4);
+
+   // creating instance of doubleConsumer
+        DoubleConsumer dcMul = (o)->System.out.println(o*o);
+        DoubleConsumer dcPlus =(d) ->System.out.println(d+d);
+        
+        //uses andThen() method
+        DoubleConsumer combine = dcMul.andThen(dcPlus);
+        combine.accept(5);
+
+   2)IntConsumer
+      ex -> IntConsumer ic = (x) ->System.out.println(x*x);
+        ic.accept(4);
+
+   3)LongConsumer
+
+     LongConsumer lc =(l) ->System.out.println(l+l);
+        lc.accept(9);
+
+   4)Bi-Consumer   - takes two argument, no return value
+
+    BiConsumer<String, Integer> biCon = (name, sal) -> 
+        System.out.println(name+" "+sal);
+        biCon.accept("Akshay", 200000);
+
+syntax-
+
+Consumer<Integer> consumer = (value) -> System.out.printLn(value);
+
+-The consumer interface is mainly used to print the data,logging,modify the data o any operation that dosent produce a
+result but affect the input data.
+==============================================================================  
+2)Predicate
+- function which accepts an arguments and in return generates a boolean value as an answer.
+- takes only one argument and retuns value ->only true/false(boolean)
+
+     Functional Varients:
+       a)IntPredicate
+   ex-->
+            IntPredicate ip = (age) -> age >= 18;
+        boolean perRes =ip.test(23);
+        System.out.println(perRes);
+
+
+   ex2 -->
+              
+		IntPredicate ip1 = (age) -> {
+			if (age >= 18)
+				return true;
+			return false;
+		};
+
+		IntPredicate ip2 = (age) -> {
+			if (age >= 25)
+				return true;
+			return false;
+		};
+
+		IntPredicate ipOr = ip1.and(ip2);
+
+		boolean perRes = ipOr.test(23);
+		System.out.println(perRes);
+
+
+       b)DoublePredicate
+       c)LongPredicate     
+       d) -Bi-predicate
+	which accepts 2 value as an argument  and returns boolean value
+	
+	
+	Syntax:
+	
+	public interface Predicate<T>
+{
+     boolean test(T t);
+}
+
+   Predicate predicate =(value) -> value != null;
+
+
+-Predicate are commonly used for testing conditions, data filtering from collections and making decision based on given criteria.
+=======================================================================================   
+3)Function
+
+- it receives single argument and  returns a value after some processing.
+ 
+  Functional Varients:
+1)IntFunction<Integer>
+ex-->
+
+IntFunction<Integer> ip = (u) -> u*u;
+		Integer resFu =ip.apply(4);
+		System.out.println(resFu);
+
+2)DoubleFunction<Double>
+ex-->		
+		DoubleFunction<Double> dcFun =(pp) -> pp/2;
+		Double po=dcFun.apply(6);
+		System.out.println(po);
+3)LongFunction<Long>
+4)BiFunction<T, U, R>
+ it accepts two arguments and returns a value after some processing.
+==============================================================================
+   
+4)Supplier
+
+-not take any single input or arguments and not returns anything
+- we used supplier when there is need of lazy genration of value.
+
+ex->
+	Supplier<Double> randomValue=() -> Math.random(); 
+		System.out.println(randomValue.get());
+
+===============================================================================   
+ 
+
+
+============================************************===========================
+
+===============================================================================
+   
+ 2) Optional
+ 
+ - it is a public final class which is used to deal with null pointer exception.
+ -it provides methods which actually checks the presence of value for perticular variable.
+- it avoids many null checks (ex-> if(str != null).
+ 
+ Optional have two states
+ 1)Present  -  List<Employee> emp    ->   emp.get();
+ 2)Absent
+ 
+ 
+ String str[] = new String[10];
+	    str[3]="abc";
+	    Optional<String> checkNull = Optional.ofNullable(str[3]);
+	 
+	    if(checkNull.isPresent()) {
+	    	System.out.println("yes present");
+	    }else {
+	    	System.out.println("not present");
+	    }
+
+=============
+Example 2
+
+//*********** Throw null pointer exception*****//
+//		String arr[] = new String[5];
+//		String aa = arr[2].toUpperCase();
+//		System.out.println(aa);
+		
+		//**Handled by optional***//
+		String arr[] = new String[5];	
+		Optional<String> optionalCheck =  Optional.ofNullable(arr[2]);
+		if(optionalCheck.isPresent()) {
+			String aa = arr[2].toUpperCase();
+			System.out.println(aa);
+		}else {
+			System.out.println("Value not present");
+		}
+=============================================================================
+3)for each
+
+		List<String> nameList = new ArrayList<>();
+		nameList.add("Shubham");
+		nameList.add("Ajay");
+		nameList.add("Vaibhav");
+		nameList.add("Amruta");
+		
+		nameList.forEach(i -> System.out.println(i));
+		nameList.forEach(System.out::println);
+
+===================================================================================
+
+	    		
+4)Lambda expression
+
+      syntax    ->
+
+- It is short block of code which takes in parameters and returns a value.
+- it is similar to method, but they do not need a name and they can be implemented in body of the method.
+- The lambda expression is provide the implementation of interface which has functional interface.
+- It saves the code
+- lambda expression is treated as function so your javac(compiler) not create .class file
+- It helps to iterate, filter and extarct data from collections.
+
+======================================================================================
+
+5)Stram API
+     - Stram api is newly added feature to collections api in java 8.
+    -Stream api is represent the sequence of elements and supports different operations(Filter,Sort,Map, Collect)
+   - Stram api takes input from your collections, arrays.
+   -stream api dont change the original data , they only provide the result
+   - to reduce lines of code
+   
+   two types of operation:
+     1)Intermediate
+	    -filter
+	    -map
+	    -sorted
+	 
+    2)Terminal 
+	   -collect
+	   -forEach
+	   -reduce
+	   
+=====================================================================================
+
+public class Java8Feaures {
+
+	public static void main(String[] args) {
+
+		//map
+		List<Integer> numList =Arrays.asList(2,6,8,9);
+		List<Integer> sqrNum = numList.stream().map(x -> x*x).collect(Collectors.toList());
+	    	System.out.println(sqrNum);	
+	    	
+	    	//filter
+	 List<String> nameList = Arrays.asList("Shubham","Vaibhav","Ajay","Amruta");
+	 
+	List<String> resList =nameList.stream().filter(i -> i.startsWith("A")).collect(Collectors.toList());
+	System.out.println(resList);
+
+-------------------------------------------------------------------------------------------------
+example-->
+   
+		List<String> nameList = Arrays.asList("Ajay","Mahesh","Ravi","Swapnesh","Sunil");
+		
+		List<String> result =nameList.stream().filter(i -> i.startsWith("S")).map(i-> i.concat(" OK"))
+				.collect(Collectors.toList());
+
+		for(String a :result) {
+			System.out.println(a);
+		}
+
+
+Qustion to do--
+
+		//employee - empid, name, exp,salary,age 
+		   //   filter emp on exp >=30   --> increase their current salary by 10000
+		
+-------------------------------------------------------------------------------------------------
+	//sorted
+	List<String>sortedList =nameList.stream().sorted().collect(Collectors.toList());
+	System.out.println(sortedList);
+
+
+Reverse Order
+
+		
+		List<String> nameList = Arrays.asList("Ajay","Mahesh","Ravi","Swapnesh","Sunil","Amit","Ishan");
+	
+		List<String>sortedList =nameList.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+	
+
+		for(String a :sortedList) {
+			System.out.println(a);
+		}
+	
+------------------------------------------------------------------------------------------------
+	
+	
+	//forEach
+   numList.stream().map(x -> x+x).forEach(y -> System.out.println(y));
+   
+   //reduce
+	List<Integer> numList = Arrays.asList(2, 6, 8, 9);
+		int res = numList.stream().filter(x -> x % 2 == 0).reduce(0, (a,b) -> a + b);
+		System.out.println(res);
+
+	}
+
+=====================================================================================================
+
+-------------Example on pedicate and consumer -------------------------------
+
+package com.wipro.oops;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
+import java.util.function.Consumer;
+import java.util.function.DoubleConsumer;
+import java.util.function.DoublePredicate;
+import java.util.function.IntConsumer;
+import java.util.function.IntFunction;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+
+public class FunctionInterfaceTypeExamples {
+
+	public static void main(String[] args) {
+		
+		//Consumer
+		DoubleConsumer dc = (a) -> System.out.println(a*5);
+		dc.accept(2);
+		
+		IntConsumer ic =(b)-> System.out.println(b+b);
+		ic.accept(5);
+		
+		BiConsumer<String, Integer> biCon = (name,salary)-> 
+		System.out.println(name+":"+salary);
+		biCon.accept("Manish Jha", 45000);
+		
+		System.out.println("===============Predicate==================");
+		
+
+		DoublePredicate dp =(age) -> age > 18;
+		boolean res= dp.test(12);
+		System.out.println(res);
+	System.out.println("==================================================");
+		
+		List<Integer> numbers = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
+		
+		//consumer
+		Consumer<Integer> printData = (num) -> System.out.println(num > 5);
+		numbers.forEach(printData);
+		
+		
+		
+		//prdicate
+		Predicate<Integer> isEven = (number) -> number % 2 == 0;
+		numbers.stream().filter(isEven)
+		.forEach(System.out::println);
+		
+		System.out.println("========================Function======================");
+
+		IntFunction<Integer> cube = (a) -> a*a*a;
+				var res1 =cube.apply(5);
+				System.out.println("cube is :"+res1);
+				
+		BiFunction<Integer, Integer, Integer> bifunDiv = (x,y) ->x/y;
+		var res4 =bifunDiv.apply(6, 2);
+		System.out.println(res4);
+		
+		GenericInterface<String, String,String> greetings =(a,b) -> b+" -->"+a;
+		var greet =greetings.sayHi("Good Morning", "Pranay");
+		System.out.println(greet);
+		
+		System.out.println("========================Supplier======================");
+		
+		Supplier<Double> randomValue=() -> Math.random(); 
+		System.out.println(randomValue.get());
+			
+		}
+	
+
+}
+
+-------------------------------------------------------------------------------
+
+@FunctionalInterface
+public interface GenericInterface<T,U,R> {
+
+	public String sayHi(String greeting,String name);
+}
+	 
+	 
+==================================================
+
+map
+
+
+
+		List<String> colorList = new ArrayList<>();
+		colorList.add("Pink");
+		colorList.add("Yellow");
+		colorList.add("Red");
+		colorList.add("Balck");
+		colorList.add("Grey");
+		
+		List res =colorList.stream().map(i -> i.length()).collect(Collectors.toList());
+		
+		for(Object a : res) {
+			System.out.println(a);
+		}
+-------------------------------------------
+
+flat map
+		   
+public static void main(String[] args) {
+
+
+		List<List<Integer>> number = new ArrayList<>();
+	
+		List<Integer> list1 = Arrays.asList(1,2);
+		List<Integer> list2 = Arrays.asList(3,4);
+		List<Integer> list3 = Arrays.asList(5,6);
+		List<Integer> list4 = Arrays.asList(7,8);
+		
+		number.add(list1);
+		number.add(list2);
+		number.add(list3);
+		number.add(list4);
+		
+		System.out.println("List of List ----->"+number);
+		
+		List<Integer> flatMapRes =number.stream().flatMap(i -> i.stream()).collect(Collectors.toList());
+		
+		System.out.println("After flat map operation-->"+flatMapRes);
+		
+		//List<List<Integer>> number  ==> List<Integer>
+	}
+
+ 
+ 
+ 

@@ -1,0 +1,83 @@
+Java Enums
+=====================================================
+  - The Enums in java is a data type which contains fixed set of constants.
+  -As per java the naming conventions for constants in enum should be in captial letters
+  -In java enums we have fixed set of constants (enum is a variable that does not change).
+  -The java enum constants are static and final implicitly.
+  -Enums are used to create our own data types like class.
+  -We can have fields, methods, constructors and main method in java enum.
+  
+  
+  
+  Example --> 
+  
+  public enum Seasons {
+
+	WINTER, SUMMER, RAINYSEASON;
+
+}
+
+
+-------------------------------------------------------
+
+public enum ColorsEnum {
+	BLUE, 
+	RED,
+	VOILET,
+	WHITE,
+	BLACK,
+	GRAY,
+	GREEN,
+	YELLOW,
+	PINK;
+}
+
+---------------------------------------------------------
+
+
+public enum CarEnums {
+
+	NEXON,AUDI,BMW,MERCEDES,VOLVO,TOYOTA,THAR,JEEP,XUV700,HONDACITY
+}
+
+------------------------------------------------
+
+
+public enum Course {
+
+	AI,ML,JFS,WD
+}
+
+
+==========================================
+Using enum--> switch satatement
+
+
+public class SwitchExample3 {
+
+	public static void main(String[] args) {
+		
+		Course courseArr[] =Course.values();
+		
+		for(Course aa :courseArr) {		
+		switch(aa) {
+		case AI:
+			System.out.println("Longforn of AI is : Artificial Intellengence");
+			break;
+		case ML:
+			System.out.println("Longforn of ML is : Machine Learning");
+			break;
+		case JFS:	
+			System.out.println("Longforn of JFS is : Java Full Stack");
+			break;
+		case WD:
+			System.out.println("Longforn of WD is : Web Developement");
+			break;	
+		default :
+			System.out.println("Wrong choice");
+		}
+		}
+
+	}
+
+}

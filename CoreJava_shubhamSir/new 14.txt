@@ -1,0 +1,35 @@
+Collection
+==============================================================
+
+- collection is a framework which always deals with object
+
+1.Wrapper class
+  -  used to convert primitive into object (autoboxing)
+     and object into primitive (unboxing)
+	 
+	 Primitive Types         Wrpper Class
+	 int                         Integer
+	 boolean                     Boolean
+	 char                        Character
+	 byte                        Byte
+	 short                       Short
+	 long                        Long
+	 float                       Float
+      double                     Double	 
+   
+2. Use of wrpper class
+    -collection need object so wrapper class required
+	-change the value in method
+	
+	example-
+	public Integer print(String str) {
+		Integer a = Integer.parseInt(str);
+		
+		return a;
+	}
+	
+	
+
+  
+
+

@@ -1,0 +1,59 @@
+Java Control Statement
+====================================================
+
+Scanne Class
+
+public class ControlStatement {
+
+	public static void main(String[] args) {
+		int age;
+		String name;
+		
+		System.out.println("Enter you age:");
+		Scanner sc = new Scanner(System.in);
+		age = sc.nextInt();
+		
+		System.out.println("Enter you name:");
+		Scanner sc2 = new Scanner(System.in);
+		name = sc2.nextLine();
+		
+		System.out.println("Entered age:"+age);
+		System.out.println("Entered name:"+name);
+		
+		if (age > 18) {
+			System.out.println("You are mature");
+		} else {
+			System.out.println("You are not mature");
+		}
+		
+
+
+	}
+
+==============================================================
+
+int a;
+		int b;
+		
+		
+		System.out.println("Enter your first number:");
+		Scanner s1 = new Scanner(System.in);
+		a = s1.nextInt();
+		
+		System.out.println("Enter your second number:");
+		Scanner s2 = new Scanner(System.in);
+		b = s2.nextInt();
+		
+		
+		int add = a + b;
+		
+		if(add > 100) {
+			System.out.println("Hi...");
+		}else {
+			System.out.println("Out...!");
+		}
+		
+		
+		
+		
+		

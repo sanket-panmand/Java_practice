@@ -1,0 +1,19 @@
+1) Create a table Employee having fields ---  Employee_id | First_name | Last_name |  Salary  | Joining_date | Departement
+2)create a table reward having fields Employee_ref_id | date_reward | amount | 
+           Here  Employee_ref_id is Foreign key (link to employee table  -- Employee_id )
+
+ex . -->  FOREIGN KEY (Employee_ref_id) REFERENCES Employee(Employee_id)
+
+=========================================================================================================
+
+1. Get all employees.
+2. Display the first name and last name of all employees.
+3. Display all the values of the “First_Name” column using the alias “Employee Name”
+4. Get all “Last_Name” in lowercase.
+5. Get all “Last_Name” in uppercase.
+6. Get unique “DEPARTMENT”.
+7. Get the first 4 characters of “FIRST_NAME” column.
+8. Get the position of the letter ‘h’ in ‘John’.
+9. Get all values from the “FIRST_NAME” column after removing white space on the right.
+10. Get all values from the “FIRST_NAME” column after removing white space on the left.
+11. Write the syntax to create the “employee” table.

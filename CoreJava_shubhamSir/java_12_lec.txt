@@ -1,0 +1,84 @@
+Operator Keyword
+
+===============================================
+Arithematic Operator:
+
++
+-
+*
+/  -  10/2  = 5
+%  -  10%2  =0
+
+
+Unary Operator
+
+int a; 
+a++; -- postfix
+++a; --prefix
+
+a--;      ---postfix
+--a;      --prefix
+
+
+Relational operator
+
+<
+>
+<=
+>=
+==    
+!=
+         
+
+Bitwise operator
+
+&
+|
+
+
+logical operator
+
+&&
+||
+
+
+ternary operator
+?:
+
+Assignment Operator 
+=
++=
+
+a = a + 10;
+		a += 10;
+		
+-=
+*=
+/=
+%=
+<<==
+>>==
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,819 @@
+OOPS- Object orieted programming language
+=======================================================
+  - OOPs is a programming approach which is defined for organizing the program around its data and defined interfaces, for the aim of making code more closely aligned with real world.
+
+-The main purpose of OOPs programming is to implement ideas and solve the real world problems using class, objects,
+inheritance, polymorphism,abstraction, encapsulation.
+
+
+
+- class
+   - A class is a templete or blueprint for the  object.
+   -before we create an object we first need to create the class.
+   -we can create multiple object of same class.
+   -class does not occupy memory
+   - a class can contain
+          fields(variables)/data member /peoperties /states
+          methods(behaviour), 
+          constructor,
+          getters & setters
+  
+============================================
+
+  Fields(variables):
+    - It is used to store the data.
+  
+ methods :
+     - methods are used to perform some tasks or operation.
+
+
+
+this keyword -
+
+  - this keyword is a reference variable that refers to current object.
+
+     USE :
+   - it can be used as current class instance variable.
+   - it can be used to call current class method.
+  
+
+super(); -> used to call the constructor of parent class
+-----------------------------------------------------------------
+-object :
+   
+-It is a real world entity.
+-It occupies memory in heap
+-Object is a instance of class.
+-Each object has an identity, behaviour(methods), state(variables)
+
+
+------------------------------------------------------------------------
+Pilers of oops concept:-
+  1.Inheritance
+  2.polymorphism
+  3.encapsulation
+  4.abstraction
+
+
+scaffolding/project structure
+----------------------------------------------------------------------
+pojo classes/model classes / DTO 
+
+pojo- plain old java object
+DTO -Data transfer object
+=======================================================================
+
+ 1.Inheritance
+
+ -Inheritance means inheriting all the fields, methods etc of parent class.
+ -There is a parent and child relationship which we called it as a is-a relationship.
+ -Benefits of Inheritance is :
+ - method reusability, fields reusability
+ - code reusability
+ 
+ 
+ 
+ Parent class /super class :
+
+     - The class whose features are inherited is known as parent/super class.
+
+ Child class/sub class
+   -The class that inherits the other class known as sub class/child class/derived class
+   - Child class can add its own fields or methods in addition to super class fields and methods.
+ ------------------------------------------
+
+Why Inheriatance required?
+
+  Reusability :
+
+      When we want to create new class and there is  already a class that include some of the code that we want in our new  class.
+So, we can inherite the other class into new class.
+Hence we can achive code reusability.
+ ----------------------------------------------    
+ 
+ Types of inheritance-
+ 
+ 1.Single
+ 2.Multilevel
+ 3.Hierarchical
+ 4.Hybrid  --> no
+ 5.Multiple
+
+
+Java is not supporing multiple inheritance -- > due to ambuiguity(confusion) /diamond issue
+---------------------------------------------------------
+
+
+public class Customer {
+
+	private String name;
+	private int age;
+	private String emailId;
+	private String mobNumber;
+	
+	public void membership() {
+		System.out.println("Custor Having Membership");
+	}
+
+	public Customer() {
+		super();		
+	}
+
+	public Customer(String name, int age, String emailId, String mobNumber) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.emailId = emailId;
+		this.mobNumber = mobNumber;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getEmailId() {
+		return emailId;
+	}
+
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+
+	public String getMobNumber() {
+		return mobNumber;
+	}
+
+	public void setMobNumber(String mobNumber) {
+		this.mobNumber = mobNumber;
+	}
+	
+	
+	
+	
+	
+}
+
+------------------------------------------
+
+public class BankCustomer extends Customer{
+
+	private String bnakAccountNumber;
+	private int bankBalance;
+	
+	public void loanAmount(int loanAmt) {
+		System.out.println("Loan Amount is :"+loanAmt);
+	}
+
+	public BankCustomer() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public BankCustomer(String bnakAccountNumber, int bankBalance) {
+		super();
+		this.bnakAccountNumber = bnakAccountNumber;
+		this.bankBalance = bankBalance;
+	}
+
+	public String getBnakAccountNumber() {
+		return bnakAccountNumber;
+	}
+
+	public void setBnakAccountNumber(String bnakAccountNumber) {
+		this.bnakAccountNumber = bnakAccountNumber;
+	}
+
+	public int getBankBalance() {
+		return bankBalance;
+	}
+
+	public void setBankBalance(int bankBalance) {
+		this.bankBalance = bankBalance;
+	}
+
+	
+	
+	
+	
+	
+}
+
+ 
+======================================================================
+
+2. Polymorphism
+
+  - same methods name having different functionality to execute.
+  - Polymorphism is task that perform a single action in different ways.
+
+
+ Types of polymorphism-
+  1)Compile time polymorphism / method overloading
+  
+     - if one class can contain same name methods having different functionality  
+     - method overloading happens in a same class
+     - Method overloading is a process that can create multiple methods of the same name in the same class , and all of the methods works in different ways.
+	 
+	 
+  2)Run time polymorphism        /   method overriding
+     - it is also same name with different functionality 
+	 -but it happens in different class(where parent and child relationship is there)
+
+
+Note: when you write same method name, then your argument parameter should be different
+to achieve polymorphism
+
+
+Example :
+public class CustomerExp {
+
+	private String custName;
+	private String emailId;
+	private String mobNo;
+
+	public CustomerExp() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public CustomerExp(String custName, String emailId, String mobNo) {
+		super();
+		this.custName = custName;
+		this.emailId = emailId;
+		this.mobNo = mobNo;
+	}
+
+	 String getCustName() {
+		return custName;
+	}
+
+	public void setCustName(String custName) {
+		this.custName = custName;
+	}
+
+	public String getEmailId() {
+		return emailId;
+	}
+
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+
+	public String getMobNo() {
+		return mobNo;
+	}
+
+	public void setMobNo(String mobNo) {
+		this.mobNo = mobNo;
+	}
+
+	public void printCustDetails(int salary, String name) {
+		System.out.println(salary + "" + name);
+	}
+	
+	public void printCustDetails(String salary, String name) {
+		System.out.println(salary + "" + name);
+	}
+
+
+	public void printCustDetails(String name, int salary) {
+		System.out.println(salary + "" + name);
+	}
+	
+
+}
+
+-------------------------------------------------------
+
+public class BusinessCustomer extends CustomerExp{
+
+	@Override
+	public void printCustDetails(int salary, String name) {
+		System.out.println("Heyy...");
+	}
+
+	@Override
+	public void printCustDetails(String name, int salary) {
+		System.out.println("ok...");
+	}
+
+	
+	public void printCustDetails(int salary) {
+		System.out.println("Heyy...");
+	}
+	
+	
+}
+
+
+--------------------------------------------------------------
+	
+====================================================================================
+
+3. Encapsulation
+  
+  - it is process by which data(variables) and the code(methods) are wrapping in a single unit(class).
+  - by encapsulating the variables as private, other classes cannot access them only methods of that class 
+  can access them.(it can be accessed according to access modifier)
+  -we called it as data hiding by access modifier
+  
+  
+  Advantages-
+  
+  1.Security
+  2.better control
+  3.getter setter
+  4.flexible
+  
+  
+  Access modifier - 
+  
+  private  - within that class
+  public   - any classes can access
+  default    - within package
+  protected - within package and any subclass which present in another package also(through inheritance)
+==========================================================================================
+
+ 4.Abstraction
+ 
+ - process of hiding certain details(implementation details) and showing only needed information to user.
+ - abstraction can be achieved with either abstract classes or interfaces.
+ - we cannot create object of abstract class and interface;
+ -abstract method can be used in abstract class and it does not have body(implementation).
+ and this abstract methods body(implementation) is provided at subclass (child class).
+
+0 to 100% -> abstraction  = abstract class
+100% -> abstraction = 	Interface
+==============================================================================================
+ public abstract class CarClass {
+
+	
+	public void driveCar() {
+		System.out.println("Driving on 4 wheels");
+	}
+	
+	public void carStart() {
+		System.out.println("By using key");
+	}
+	
+	public abstract void automaticFunction();
+	
+}
+========================================================================================
+
+public class NexonCar extends CarClass {
+
+	
+	@Override
+	public void driveCar() {
+		super.driveCar();
+	}
+
+	@Override
+	public void carStart() {	
+		super.carStart();
+	}
+
+	@Override
+	public void automaticFunction() {
+		System.out.println("Auto gear function");
+		
+	}
+==============================================================
+
+
+-------------------------------------------------------------
+
+Interface
+
+-by using interface we can achieve 100% abstraction
+-all the methods in the interface are abstract methods
+-by default variables of interface are public static final;
+
+
+
+public interface CustomerInterface {
+
+	public void saveCustomer();
+	public void getCustomer();
+}
+
+--------------------------
+
+public class BankCust implements CustomerInterface {
+
+	@Override
+	public void saveCustomer() {
+		System.out.println("customer saved");
+		
+	}
+
+	@Override
+	public void getCustomer() {
+		System.out.println("customer data");
+	}
+
+}
+
+
+==============================================================
+
+
+class -> class   => extends
+class  -> interface   =>implements
+interface -> interface  => extends
+
+
+
+===============================================================
+
+
+Inheritance Example
+
+
+
+public class BankEmployee {
+
+	private int id;
+	private String empName;
+	private String emailId;
+	private String mobileNo;
+	private String designation;
+	private String address;
+	private int salary;
+
+	public BankEmployee() {
+		super();
+
+	}
+
+	public BankEmployee(int id, String empName, String emailId, String mobileNo, String designation, String address,
+			int salary) {
+		super();
+		this.id = id;
+		this.empName = empName;
+		this.emailId = emailId;
+		this.mobileNo = mobileNo;
+		this.designation = designation;
+		this.address = address;
+		this.salary = salary;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getEmpName() {
+		return empName;
+	}
+
+	public void setEmpName(String empName) {
+		this.empName = empName;
+	}
+
+	public String getEmailId() {
+		return emailId;
+	}
+
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+
+	public String getMobileNo() {
+		return mobileNo;
+	}
+
+	public void setMobileNo(String mobileNo) {
+		this.mobileNo = mobileNo;
+	}
+
+	public String getDesignation() {
+		return designation;
+	}
+
+	public void setDesignation(String designation) {
+		this.designation = designation;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public int getSalary() {
+		return salary;
+	}
+
+	public void setSalary(int salary) {
+		this.salary = salary;
+	}
+
+
+}
+
+
+-----------------------------------------------------------------------
+
+public class Cashier extends BankEmployee {
+
+	private int bonous;
+	private String handledAccount;
+	
+	
+	public Cashier() {
+		super();
+	}
+
+
+	public Cashier(int bonous, String handledAccount) {
+		super();
+		this.bonous = bonous;
+		this.handledAccount = handledAccount;
+	}
+
+
+	public int getBonous() {
+		return bonous;
+	}
+
+
+	public void setBonous(int bonous) {
+		this.bonous = bonous;
+	}
+
+
+	public String getHandledAccount() {
+		return handledAccount;
+	}
+
+
+	public void setHandledAccount(String handledAccount) {
+		this.handledAccount = handledAccount;
+	}
+	
+	
+}
+----------------------------------------------------------------------
+
+public class SubCashier extends Cashier {
+
+	private int id;
+	private boolean isExperienced;
+	
+	public SubCashier() {
+		super();
+		
+	}
+	public SubCashier(int bonous, String handledAccount) {
+		super(bonous, handledAccount);
+		
+	}
+	public SubCashier(int id, boolean isExperienced) {
+		super();
+		this.id = id;
+		this.isExperienced = isExperienced;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public boolean isExperienced() {
+		return isExperienced;
+	}
+	public void setExperienced(boolean isExperienced) {
+		this.isExperienced = isExperienced;
+	} 
+	
+	
+}
+
+===================================================================================
+
+package com.tcs.app.oops;
+
+public class Employee {
+
+	private int empId;
+	private String empName;
+	private int salary;
+	
+	
+	public Employee() {
+		super();
+	}
+
+
+	public Employee(int empId, String empName, int salary) {
+		super();
+		this.empId = empId;
+		this.empName = empName;
+		this.salary = salary;
+	}
+
+
+	public int getEmpId() {
+		return empId;
+	}
+
+
+	public void setEmpId(int empId) {
+		this.empId = empId;
+	}
+
+
+	public String getEmpName() {
+		return empName;
+	}
+
+
+	public void setEmpName(String empName) {
+		this.empName = empName;
+	}
+
+
+	public int getSalary() {
+		return salary;
+	}
+
+
+	public void setSalary(int salary) {
+		this.salary = salary;
+	}
+	
+	
+	public void printEmployeCompany() {
+		System.out.println("Infosys");
+	}
+	
+}
+=================================================
+
+package com.tcs.app.oops;
+
+public class Developer extends Employee {
+
+	private String codingLanguage;
+	private int bonus;
+	
+	
+	public Developer() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public Developer(String codingLanguage, int bonus) {
+		super();
+		this.codingLanguage = codingLanguage;
+		this.bonus = bonus;
+	}
+
+
+	public String getCodingLanguage() {
+		return codingLanguage;
+	}
+
+
+	public void setCodingLanguage(String codingLanguage) {
+		this.codingLanguage = codingLanguage;
+	}
+
+
+	public int getBonus() {
+		return bonus;
+	}
+
+
+	public void setBonus(int bonus) {
+		this.bonus = bonus;
+	}
+	
+	
+	
+	public void printCodingLanguage() {
+		System.out.println("Java..!!");
+	}
+	
+	
+}
+===========================================
+public class Test {
+
+	public static void main(String[] args) {
+		
+		Employee dev = new Developer();
+		dev.printEmployeCompany();
+		
+		
+	}
+}
+
+
+======
+//print duplicate string from given array
+String str[] = {"aa","bb","aa","cc","dd","bb"};
+aa
+
+
+//write program to reverse the string;
+String str = "Java is language";
+o/p ->> language is Java
+
+
+
+
+1)Write a program to check weather  string is palindrome or not
+
+String a = "madam";   //yes 
+String b ="define";   //no
+String c ="level";    //yes
+
+2)Java program to print prime number from 1 to 100;
+
+=======================================================================
+
+package com.wipro.oops;
+
+public class Dog {
+
+	private int age;
+	private String color;
+	private String bread;
+	private int size;
+
+	public Dog() {
+
+	}
+	public Dog(int age, String color, String bread, int size) {
+		this.age = age;
+		this.color = color;
+		this.bread = bread;
+		this.size = size;
+	}
+
+	public void sleep() {
+		System.out.println("Dog is sleeping");
+	}
+
+	public void bark() {
+		System.out.println("Dog is barking");
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public int getAge() {
+		return this.age;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public String getColor() {
+		return this.color;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
+	}
+
+	public int getSize() {
+		return size;
+	}
+
+	public void setBread(String bread) {
+		this.bread = bread;
+	}
+
+	public String getBread() {
+		return this.bread;
+	}
+
+}
+
+
+
+

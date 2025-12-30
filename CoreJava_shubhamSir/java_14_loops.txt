@@ -1,0 +1,597 @@
+Loops in java
+
+=================================================================
+
+Java Control Statement
+
+
+A).Decision making statement
+
+    - Java if statement is used to test the condition.
+
+
+1.if-else statement
+
+public static void main(String[] args) {
+		int age = 23;
+		IfElseStatementExample aa = new IfElseStatementExample();
+		String msg = aa.validateUser(age);
+		System.out.println(msg);
+		
+		int marks = 35;
+		
+		if(marks >= 35) {
+			System.out.println("Pass");
+		}else {
+			System.out.println("Fail");
+		}
+
+
+	
+		int rating = 5;	
+		if(rating > 3) {
+			System.out.println("good");
+		}else {
+			System.out.println("bad");
+		}
+		
+		
+
+	}
+	
+	public String validateUser(int age) {
+		String msg;
+		if(age > 18) {
+			msg ="Eligible"	;		
+		}else {
+			msg ="Not Eligible"	;
+	
+		}
+		
+	return msg;
+	}
+
+---------------------------------------------------------------------------------------------
+
+2.Nested If-else statement
+
+int marks = 100;
+	
+public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter your marks");
+		
+		int marks = sc.nextInt();
+		if(marks >= 75) {			
+			if(marks > 90) {
+				System.out.println("hey your above 90 congratualtions...");
+			}else{
+				System.out.println("Distinction");
+			}	
+		}else if(marks >=60 && marks < 75) {
+			System.out.println("First class");
+		}else if(marks >= 55 && marks < 60) {
+			System.out.println("second class");
+		}else if(marks >= 35 && marks < 55) {
+			System.out.println("first class");
+		}else {
+			System.out.println("fails");
+		}
+
+	}
+====================================================================================================
+
+	public class HelloWorld {
+
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter your first number:");
+		int num1 = sc.nextInt();
+		System.out.println("Enter your second number:");
+		int num2 = sc.nextInt();
+		
+		System.out.println("Enter the following operation :1)Multi,2)Add 3)Div,4)Sub");
+		String ope = sc.next();
+		
+		if(ope.equalsIgnoreCase("Multi")) {
+			System.out.println(num1*num2);
+		}else if(ope.equalsIgnoreCase("Add")) {
+			System.out.println(num1+num2);
+		}else if(ope.equalsIgnoreCase("Div")) {
+			System.out.println(num1/num2);
+		}else if(ope.equalsIgnoreCase("Sub")) {
+			System.out.println(num1-num2);
+		}else {
+			System.out.println("Invalid choice..please enter the given operation");
+		}
+	}
+----------------------------------------------------------------------------------------------------
+
+int age = 12;
+		
+			System.out.println(age > 18 ? "mature" : "adult");
+
+===================================================================
+	
+
+2.switch
+
+public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter  the name to check marks:1)Akshay 2)Priti 3)Shrinivas 4)Pramod 5)Yashswini");
+		String names = sc.next();
+		
+		switch(names) {
+		
+		case "Akshay":
+			System.out.println("92/100");
+			break;
+		case "Priti" :
+			System.out.println("93/100");
+			break;
+			
+		case "Shrinivas":
+			System.out.println("94/100");
+			break;
+		case "Pramod" :
+			System.out.println("99/100");
+			break;
+		case "Yashswini" :
+			System.out.println("100/100");
+			break;
+		default :
+			System.out.println("Invalid choice..please enter valid name");
+		}
+		
+
+	}
+
+=============================================================================
+
+public static void main(String[] args) {
+	
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter week number from 1 to 7");
+		
+		int weekNum = sc.nextInt();
+		
+		switch(weekNum) {
+
+		case 1 :{
+			System.out.println("Sunday");
+			break;
+		}
+		
+		case 2 : {
+			System.out.println("Monday");
+			break;
+		}
+		
+		case 3 : {
+			System.out.println("Tuesday");
+			break;
+		}
+		
+		case 4 : {
+			System.out.println("Wednesday");
+			break;
+		}
+		case 5 : {
+			System.out.println("Thursday");
+			break;
+		}
+		
+		case 6 : {
+			System.out.println("Friday");
+			break;
+		}
+		
+		case 7 : {
+			System.out.println("Saturday");
+			break;
+		}
+		
+		default : {
+			System.out.println("Invalid choice...");
+		}
+		
+		}
+	
+	
+	}
+-----------------------------------------------------------------
+Scanner sc = new Scanner(System.in);
+		System.out.println("Enter week number to print week");
+		System.out.println("1 , 2, 3, 4, 5, 6, 7");	
+		
+		int weekNo = sc.nextInt();
+		
+		switch(weekNo) {
+		case 1:
+			System.out.println("Monday");
+			break;
+		case 2:
+			System.out.println("Tuesday");
+			break;
+		case 3 :
+			System.out.println("Wednesday");
+			break;
+		case 4 :
+			System.out.println("Thursday");
+			break;
+		case 5:
+			System.out.println("Friday");
+			break;
+		case 6:
+			System.out.println("Saturday");
+			break;
+			
+		case 7:
+			System.out.println("Sunday");
+			break;
+			
+		default:
+			System.out.println("Wrong input...");
+			
+		}
+=========================================
+
+Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the students name:1)Rutuja 2)Aditya 3)Prakash"
+				+ "4)Amol 5)Shrikant 6)Shubham 7)Sachin 8)Santosh 9)Sanket");
+		String names = sc.next();
+
+		switch (names) {
+		case "Rutuja": {
+			System.out.println("Mock marks :8/10");
+			break;
+		}
+		case "Aditya": {
+			System.out.println("Mock marks :9/10");
+			break;
+		}
+		case "Prakash": {
+			System.out.println("Mock marks :8/10");
+			break;
+		}
+
+		case "Amol": {
+			System.out.println("Mock marks :10/10");
+			break;
+		}
+
+		case "Shrikant": {
+			System.out.println("Mock marks :8/10");
+			break;
+		}
+
+		case "Shubham": {
+			System.out.println("Mock marks :10/10");
+			break;
+		}
+
+		case "Sachin": {
+			System.out.println("Mock marks :6/10");
+			break;
+		}
+
+		case "Santosh": {
+			System.out.println("Mock marks :7/10");
+			break;
+		}
+
+		case "Sanket": {
+			System.out.println("Mock marks :9/10");
+			break;
+		}
+
+		default: {
+			System.out.println("Invalid input");
+		}
+		}
+
+==================================================
+
+B)Loop Statement
+
+1.for loop
+2.while loop
+3.do while
+
+4.for-each loop
+
+c)Jump Statement
+1.Beak
+2.continue
+
+
+============================================================
+
+B)Loop Statement
+============
+
+1.for loop
+============
+
+- we use for loop only when we exactly know the number of times ,
+ we want to exacute block of code.
+ 
+ 
+ syntax-
+ 
+ for(int i=1;i<=10;i++) {       // 1st condition-initialization of variable //2nd condition-condition  //3rd - increment or decrement
+			System.out.println(i);        
+		}
+
+
+
+Second example:
+
+Scanner sc =new Scanner(System.in);
+      
+		for(int i=1; i<=3; i++) {
+			System.out.println("Enter your first number:");
+			int a = sc.nextInt();
+			System.out.println("Enter your second number:");
+			int b = sc.nextInt();
+			int c = a + b;
+			System.out.println("Addition is:"+c);
+			System.out.println("==============================");	
+		}
+==================================
+
+  2 nested for loop
+=======================================
+ex -1:
+
+
+for(int i =1; i <=3; i++) {
+			System.out.println(i);
+			for(int j = 1; j<=3; j++) {
+				System.out.println(j);
+			}	
+		}
+
+ex -2:
+for(int i =1; i <=3; i++) {
+			for(int j = 1; j<=3; j++) {
+				for(int k =1;k<=3; k++) {
+					System.out.println(i+":"+j+":"+k);
+				}
+			}	
+		}
+
+
+
+
+ex-3 :
+
+		for(int i=1; i<=10; i++) {
+			
+			for(int j=1; j<=3; j++) {
+				System.out.println("Java");
+			}
+			System.out.println("=================");
+		}
+
+	}
+
+
+
+
+star pattern
+Exp-1
+
+
+for(int i =1; i <=3; i++) {
+			
+			for(int j =1; j<=i; j++) {   
+				System.out.print("*");
+			}
+			System.out.println();
+			
+		}
+
+output:
+*
+**
+***
+
+
+-------------------------------------
+Exp-2
+
+		for(int i=4; i>=1;i--) {
+			for(int j= 1; j<=i;j++) {
+				System.out.print("*");
+			}
+			
+			System.out.println();
+		}
+	}
+
+
+output:
+
+****
+***
+**
+*
+==========================================================
+que-> print number from 1 to 25
+que-> print 10's table
+Que ->Print following star pattern by using for loop:
+
+output: 
+
+***
+**
+*
+
+==========================================================================
+
+while loop
+
+- when you dont know exact number of times we need to execuate loop
+
+-if number of iterations not fixed , it is recommended to use while loop.
+
+int j=1;
+		while(j <= 10) {
+			System.out.print(j+",");
+			j++;
+			
+		}
+=============================================================================
+
+do while loop
+ - when you dont know exact number of times we need to execuate loop,
+ but you want to execuate your loop at least once
+ 
+
+
+syntax:
+
+ex-1:
+
+int k =1;
+		do {
+			System.out.println(k);
+			k++;
+		}while(k <=10);
+		
+		
+ex-2:
+
+int i =1;
+		do {
+			System.out.println("I am in do while loop");
+			i++;
+		} while (i<=3);
+
+		
+============================================================================
+
+
+For each loop (enhanced for loop)---->
+
+
+		int arr[] = {1,8,9,7,5,7,3,5};	
+		for(int ss:arr) {
+			System.out.println(ss);
+		}
+		
+
+		
+========================================================
+
+1)prime number
+2)swap the number
+
+int a;
+		int b;
+		System.out.println("Enter your first number:");
+		Scanner sc = new Scanner(System.in);
+		a = sc.nextInt();
+		
+		System.out.println("Enter your first number:");
+		Scanner sc1 = new Scanner(System.in);
+		b = sc1.nextInt();
+		
+		System.out.println("Number before Swapping where a="+a+"and b="+b);
+
+		int temp=0;
+		
+		temp = a;    
+		a = b;
+		b = temp;
+		
+		System.out.println("Number after Swapping where a="+a+"and b="+b);
+		
+		
+		
+		int x =20;
+		int y=30;
+		
+		x = x + y;   // x = 20 +30;   x =50;
+		y=  x - y;    //y = 50 - 30;  y=20;
+		x = x - y;    //x = 50 - 20; x=30;
+		
+		System.out.println("x="+x+" and y="+y);
+		
+		
+		
+
+3)fibonacci series
+4)palindrome
+5)string reverse
+6)find second highest number in given array
+7)string palindrom
+
+madam
+radar
+
+
+
+model classes/pojo classes
+
+pojo- plain old java object
+	
+		
+
+
+--------------------------------------------------
+
+create a switch statement 
+1)take input from user 
+num1 num2
+2)take one more input from user -> Add, Sub, Div, Mult
+
+  
+3)do the switch operation
+========================================================================================
+
+	public static void main(String[] args) {
+
+		for (int i = 1; i <= 5; i++) {
+			
+			System.out.println("Chandrayan-3");
+		}
+		
+		System.out.println("============================================");
+		
+		for(int i=1; i<=10; i++) {
+			System.out.println(i);
+		}
+		
+		System.out.println("============================================");
+		
+		for(int i=1; i <= 10; i++) {
+			System.out.println(i*10);
+		}
+		
+		System.out.println("============================================");	
+		
+		for (int i = 1; i <= 5; i++) {		
+			for(int j=1; j<=3; j++) {
+				System.out.println("Chandrayan-3");
+			}
+              System.out.println("========================");
+			
+		}
+
+
+		System.out.println("============================================");	
+	
+		
+		for(int i=1; i <= 10; i++) {
+			System.out.println(i);    //1 4 7 10
+			i=i+2;     
+		}
+		
+	}
+
+
+
+
+

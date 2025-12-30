@@ -1,0 +1,37 @@
+Data Types In Java:
+========================================================
+ int age;    //declare
+ 
+ age=21;     // define
+ 
+
+ -- Different size and their values which can be stored in the variable.
+ 
+ Types of data types:-
+ 
+ 1)primitive data type
+ 2)non primitive data types
+ 
+  1)primitive data type:-
+  
+        boolean flag = false;  //1 bit
+		char ch ='w';    //2 byte
+		short v =88;     //2 byte
+		int age=87;      // 4 byte
+		long l = 77887887777777l;  //8 byte
+		float f =10.2f;   // 4 byte
+		double db = 10.888;  // 8 byte
+		
+		
+		
+		
+  2)non-primitive datatypes
+  
+  datypes which is created by you guyzz...!!!
+  
+  1)String s="My class"; 
+  2))class
+  3)Arrays etc.
+		
+===================================================================
+     

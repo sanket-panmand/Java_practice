@@ -1,0 +1,478 @@
+Final :
+
+------------------------------------------------------------------------
+
+Final is a keyword, which we can used for variable, class, method.
+It is a non access modifier.
+
+1)final keyword for variable:-
+
+- if you initialize (define) the variable and put that variable as final then you can't change the value.
+
+final int a = 78;
+==========================================================================
+
+
+
+Memory:
+
+
+
+1)Heap Memory
+
+    JVM-->started -> java program runs
+
+ heap memory is crated and any objects that u will create are stored in heap.
+
+ by deafault size of Heap memory is - 1GB
+
+2)Stack Memory
+
+They contain some method specific(related) values which are  short lived in methods.
+And reference of object also stored in stack
+
+=========================================================================
+
+String Operation
+
+=========================================================================
+
+- It is basically object which represents sequence of character.
+
+
+- we can create string using two ways
+    a)By string literal
+	
+	ex.-> String str ="Hello";
+	
+    b)By new Keyword
+	
+	ex.-> String str2 = new String("Hi");
+
+
+Note - when you crate object of anything it will always create at heap memory.
+------------------------------------------------------------------------
+
+		
+		String str = "Java";     //string literals
+		
+		String str2 = new String("Testing");  // by creating object of string
+
+----------------------------------------------------------------------------------
+-When you create string by using new keword it is always created first in heap memory,after that it will create object in SCP also for future use.
+-When you create string object by using string literal it is only created in SCP.	
+---------------------------------------------------	
+String interning ->
+
+
+When you create a new string literal from the string class ,the JVM will first checks if that string is alrady exist in SCP
+(String constant pool). If it is exist , then JVM will return the refrenfce of the existing string object, rather than creating new object. 
+This is know as string interning.
+
+
+==================================================================================	
+
+- String provides you lot of methods for string operation
+
+       -equals();      -----always returns true or false but case sensative
+       -equalsIgnoreCase();  --- alwyas return true or false by ignoring case sensitivity
+--------------------------------------------------------------------------------------------
+Example Euqals and EqualsIgnoreCase: --->
+
+		String s = "Hello"; // string literal
+		String str = new String("Hi"); // by creating object
+
+		
+		if(s.equals(str)) {
+			System.out.println("Both are equal");
+		}else {
+			System.out.println("Not equal");
+		}
+	System.out.println("================================");
+		String s1 = "Ok";
+		String s2 = new String("ok");
+		
+		if(s1.equalsIgnoreCase(s2)) {
+			System.out.println("Both are equal");
+		}else {
+			System.out.println("Not equal");
+		}
+		
+------------------------------------------------------------------------------------------------		
+
+	-compareTo();   ---- always return int value
+        String str = "Go";  
+		String str2 = new String("He");
+
+		System.out.println(str.compareTo(str2));
+       str > str2 --> returns posstive value
+       str < str2 -->  return negative value
+       str == str2 ---> return 0
+                           
+	   
+-----------------------------------------------------------------------------------------
+-conacat(); 
+
+Example -->
+
+	String s = "Hello"; 
+		String s1 = "World...!!";
+
+		System.out.println(s.concat(s1));
+
+
+-------------------------------------------------------------------------------------------
+	   -split();
+
+     example->
+
+            	String str = "Hello,hi,how,mine,go";
+
+		String strArr[] = str.split(",");
+		
+		for(String aa : strArr) {
+			System.out.println(aa);
+		}
+		
+---------------------------------------------------------------------------------------------
+	   -length();
+
+             String s = "Hello";
+		System.out.println(s.length());
+----------------------------------------------------------------------------------------------
+	   -replace();   
+
+	String s = "Helloeeee";
+
+		System.out.println(s.replace('e','T'));
+----------------------------------------------------------------------------------------------
+       - equalIgnoreCase()    -----always returns true or false by ignoring case senstivity
+
+---------------------------------------------------------------------------------------------
+       -  ==                    --- always checks memory referece same or not       
+
+Example:->
+String s = "Hello";
+
+		String s1 = "Hello";
+		
+		String str = new String("Hello");
+		
+		if(s1 == str) {
+			System.out.println("They are refering to same memory");
+		}else {
+			System.out.println("They are not refering to same memory");
+
+		}
+----------------------------------------------------------------------------------------------
+   -compareTo()
+   
+             String s1 = "Rohit";
+             String s2 = "Rohit";
+=======================================================
+   
+s1 == s2 :  This method return 0;
+s1 > s2 : this method return possitive value;
+s1 < s2 : this method returns negative value;
+
+======================================================
+
+intern()
+
+  - this method will create exact copy of string object in the heap memory and stores it in the string constat pool.
+
+
+String s1 ="abc";
+		String s2 = new String("abc");
+		String s3 = new String("xyz");
+	    String s4 = s1.intern();
+	    
+	    System.out.println(s4);
+	    
+	    if(s1 == s4) {
+	    	System.out.println("Hiii");
+	    }else {
+	    	System.out.println("Bye");
+	    }
+======================================================
+
+1)what is difference between .equals() and == method ?
+
+.equals() -> it checks the two string's content is same or not 
+==   --> checks that both string are refering to same memory address or not 
+   
+=======================================================
+Example :
+
+public static void main(String args[]) {
+		String str1 = "Rohit@gmail.com";
+		String str2 = "Rohit";
+		System.out.println(str3.length());
+		System.out.println(str1.concat(str3));
+		System.out.println(str1.replace('R', 'S'));
+		
+	
+	}
+		String str3 = new String("Shubham");
+		
+		System.out.println(str1.equals(str3));
+		System.out.println(str1.equalsIgnoreCase(str3));
+	    System.out.println(str1.compareTo(str2));	
+	    System.out.println(str1 == str3);   //always checks memory referece same or not       
+
+
+	   
+
+	
+	
+	public class StringOperation {
+
+	public static void main(String[] args) {
+	
+		String str ="Hello";
+		String str2 = new String("Hello");
+		String  str3 ="hi";
+		String str4 = new String("Hello");
+		
+		  System.out.println(str.concat(str2));
+		  
+		  if(str.equals(str2)) { System.out.println("hey they are equal"); }else {
+		  System.out.println("hey they are not equal"); }
+		  
+		  if(str.equalsIgnoreCase(str2)) { System.out.println("hey they are equal");
+		  }else { System.out.println("hey they are not equal"); }
+		 
+		
+		//.equals() -> only checks content
+		//  == checks content and memory reference
+		if(str2 == str4) {
+			System.out.println("hey they are  equal");
+		}else {
+			System.out.println("hey they are not equal");
+		}
+		
+		
+		System.out.println("length is"+str.length());
+		System.out.println(str.charAt(4));
+		System.out.println(str.contains("H"));
+
+		
+	}
+
+}
+====================================================================
+
+immutable -not changebale
+mutable -changable
+
+why String is immutable in java?
+
+
+===================================================================
+String builder and string buffer:
+
+
+- String is widely used in java
+- In order to manipulate string we have string builder and string buffer classes 
+provided by java.
+- string is immutable where your string builder and string buffer are mutable.
+
+-String builder and string buffer are used to manipulate the string
+-These are mutable object which provides methods such as substring(), append(),
+insert(), delete() for string manipulation.
+----------------------------------------------------------------
+
+String buffer -
+
+- String buffer operation are thread safe and synchronized-(when you send one request u need to wait for acknowledgement or response)
+-string buffer used when multiple threads are working on the same string.
+-string buffer performance is slow as comapre to string builder.
+
+synatax -
+
+StringBuffer buf = new StringBuffer(str);
+
+		StringBuffer strBuf = new StringBuffer("Arohi");
+		System.out.println(strBuf.append("Malhotra"));
+		System.out.println(strBuf.reverse());
+		System.out.println(strBuf.replace(1, 3, "@@@"));
+		System.out.println(strBuf.insert(3, "Ok"));
+
+
+
+--------------------------------------------------------------
+
+
+=========================================================================================
+
+String Builder
+
+-String builder are non synchronized and not thread safe.
+-string builder performance is better than string buffer.
+
+Synatx-
+
+StringBuilder builder = new StringBuilder(str);
+
+note->   conact and append doing same operation to join strings together
+          but difference is that coanct() is String's methods     
+		  where as append() is stringBuffer's and StringBuilder's method.
+		  
+		  
+			StringBuilder sbuf = new StringBuilder("Java");
+		sbuf.append(" is a language");
+		System.out.println(sbuf);
+		
+		sbuf.insert(1, "@@");
+		System.out.println(sbuf);
+		
+		System.out.println(sbuf.substring(5));
+		System.out.println(sbuf.substring(1,6));	  
+
+==========================================================
+  
+	  example:
+	  
+	  public class StringBuilderAndBufferExample {
+
+	public static void main(String[] args) {
+		
+	long startTime = System.currentTimeMillis();
+		
+        StringBuffer sb = new StringBuffer("Good");
+        
+        for(int i=0; i<100000; i++) {
+        	sb.append("Morning");
+        }
+        
+        System.out.println("time taken by string buffer: "+(System.currentTimeMillis()-startTime)+"ms");
+               
+        startTime= System.currentTimeMillis();
+        StringBuilder sb2 = new StringBuilder("Good");
+        for(int i=0; i<100000; i++) {
+        	sb2.append("Morning");
+        }       
+        System.out.println("time taken by string builder: "+(System.currentTimeMillis()-startTime)+"ms");
+        
+	}
+
+}
+
+
+==============================================================================
+intern();
+		
+		char c = 'Z';
+		int asciValue = c;
+		System.out.println(asciValue);
+		
+
+ASCII Values :-
+
+
+A 65
+B 66
+C 67
+D 68
+E 69
+F 70
+G 71
+H 72
+I 73
+J
+K
+L
+M
+N
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+Y
+Z 90
+===========================================================
+
+More Examples on String methods:
+
+
+package com.wipro.program;
+
+public class StringExample {
+
+	public static void main(String[] args) {
+
+		String str2 = new String("Angular");
+		String str = "Java";
+		String str3 = "Java";
+
+		// Methods of string
+
+		if (str2.equals(str)) {
+			System.out.println("Both are same");
+		} else {
+			System.out.println("Both are not same");
+		}
+
+		System.out.println("=========================================");
+
+		if (str2.equalsIgnoreCase(str)) {
+			System.out.println("Both are same");
+		} else {
+			System.out.println("Both are not same");
+		}
+
+		System.out.println("=========================================");
+
+		System.out.println(str2.concat(str));
+		System.out.println("=========================================");
+
+		if (str3 == str) {
+			System.out.println("Both refers same memory address");
+		} else {
+			System.out.println("Both not refers same memory address");
+		}
+
+		System.out.println("=========================================");
+
+		System.out.println(str2.length());
+		
+		System.out.println("=========================================");
+
+		String s1 ="JARTUI"; // scp   
+		String s2 ="AA";
+		
+		System.out.println(s1.compareTo(s2));      /// calculated ASCCI value and the it will compare
+		//equals() == comapreTo()
+		System.out.println("=========================================");	
+		String sw =s1.replace('T', '$'); //JAR$UI   -->heap
+		String sp = "JAR$UI";    //-->scp
+		System.out.println(sw == sp);
+		
+		System.out.println("=========================================");
+		String sen ="I love bananas, but I also like apples, bananas are very sweet";
+		System.out.println(sen.replaceAll("bananas", "mangoes"));
+		System.out.println(sen);
+		System.out.println("=========================================");
+		System.out.println(sen.contains("like"));
+		System.out.println("=========================================");
+		System.out.println(sen.isEmpty());
+		System.out.println("=========================================");
+		
+		String sto = new String("hello");
+		sto =sto.intern();    //it only create hello in scp
+		String stl = "hello";  /// alrady hello created by intern() method so here we use only reference
+	
+		System.out.println(sto == stl);
+		
+		
+
+	}
+
+}
+

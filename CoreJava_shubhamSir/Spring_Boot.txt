@@ -1,0 +1,65 @@
+Spring Boot
+
+===============================================================
+1.using spring boot we can develope stand-alone and production-grade spring
+application that you can just run.
+
+
+Environments(server)-
+1)Dev environment
+2)Test environment(UAT- user acceptance testing)
+3)pre-prod environment
+4)prod environment
+
+
+Advantages-
+1.Easy to understand and develope spring application
+2.increase productivity.
+3.reduce developement time
+
+Featues of spring boot 
+1.embded tomcat server
+2.avoid xml configuration
+3.easily managemt of dependency 
+4.it offers you annotation based application.
+
+==========================================================================
+
+@SpringBootApplication  -
+it is used as combination of:
+
+1.@ComponentScan
+it is used to scan all the packages and sub packages present in th application
+
+2.@EnableAutoConfiguration
+ir automatically enables the configuration
+
+2.@Configiration
+
+it is used to mark class as configuration where all config related to project are present
+
+============================================================================================
+
+Hibernate
+
+-It is an framework that deals with developement of java appllication in order to interact with 
+database.
+-It is an open source framework.
+- It is an ORM (Object Relational mapping) tool.
+-Hibernate implements specifications of JPA (Java Persistance API) for data persistance.
+-ORM tool internally uses th JDBC API to interact with database.
+
+
+Hibernate mapping
+  -one to one
+  -one to many
+  -many to one
+  -many to many
+
+
+===================================================================================
+
+JPA
+
+-JPA (Java Persistance API) that provides certain functionality and standard ORM tool.
+_ it contains some packages like classes and interfaces.

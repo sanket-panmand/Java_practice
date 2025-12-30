@@ -1,0 +1,120 @@
+JAVA MAP
+=================================================
+
+-Map is always work with key and value pair.
+-key - should be unique
+- value can be anything.
+-Map is not a sub type of collection
+- map is an interface so you cannot create object of map 
+- when you are passing object as key we need to overider the hashcode and equals method in that class.
+--default size is 16 -(bucket of hashmap)
+-  where your key is unique.
+-So here one object is used as key and another object used as value.  
+-If you try to insert duplicate key , it will replace the present element by current one.
+
+when to use map -
+
+- when there is a condition where we want to use association of key and value pair.
+-when someone wants to retrieve(fetch) and update or add the elements by key.
+
+
+comman example-
+1)a map of error codes and there description
+2)map of city and pincode
+3)a map of rollnum and name of student
+
+syntax -
+ 
+ Map<String, Integer> m = new HashMap<>();
+ 
+
+characteristics of map
+1)key should be unique and value can be anything
+2)in some map implementation like hashmap and linkedhashmap null key and value are allowed
+but in treemap it is not allowed
+3)map is always wporks on hashing principle -(hashcode() and equals() method)
+
+
+
+example-
+
+	Map<String, Integer> m = new LinkedHashMap<>();
+		m.put("EMP5060",35000); 776hh8
+		m.put("EMP5051",45000);
+		m.put("EMP5059",49000);
+		m.put("EMP5060",100000);776hh8
+		
+		
+
+		for(Map.Entry<String,Integer> aa : m.entrySet()) {
+			System.out.println(aa.getKey()+":"+aa.getValue());
+			
+		}
+		
+        System.out.println("========================");
+		m.remove("EMP5060");
+		for(Map.Entry<String,Integer> aa : m.entrySet()) {
+			System.out.println(aa.getKey()+":"+aa.getValue());
+			
+		}
+	}
+
+
+========================================================================================
+
+hashcode() method
+equals() method
+
+hashcode() method-
+ - it is used to get hashcode of an object.
+ -it return the memory reference of an object in the form of integer.
+ - it calculate the bucket i.e. it calcualte the index.
+ 
+ equals() method -
+
+- this method used to check weather 2 objects are equal or not.
+-it comapres the key whether they are equal or not. If equals() method return true then they are
+equal othewise not.
+
+
+  Que) What is contract in between hashcode() and equals() method ?
+   
+   Ans ->
+   A contract is: 
+   If two objects are equal then they should have the same hashcode 
+   and if two objects are not equal then they may or may not have same hash code.
+
+==============================================================================
+For interview questions
+
+https://www.interviewbit.com/hashmap-interview-questions/
+
+
+====================================================================================
+
+TreeMap:
+
+1.It implements map interface.
+2.It gives you efficient way to store data in key and value pair in sorted order.
+3.It provide you faster rapid fetching(rettrieval).
+4.tree map gives you feature that its elements will be sorted in an ascending order.
+5.Java treemap class it is a red-black tree based implementation.- red-black tree is BST(self-balancing binary search tree)
+     -red - black is color of node
+     -
+
+6.It contains only unique element
+7.here no null key is allowed but we can have multiple null values.
+
+TreeMap<String,Integer> tp = new TreeMap<>();
+		
+		tp.put("Nike", 5000);
+		tp.put("Addidas", 3000);
+		tp.put("Puma", 4000);
+		tp.put("Goldstar",5000);
+		
+		for(Map.Entry a :tp.entrySet()) {
+			System.out.println(a.getKey()+" "+a.getValue());
+		}
+		
+        System.out.println(tp.descendingMap());
+

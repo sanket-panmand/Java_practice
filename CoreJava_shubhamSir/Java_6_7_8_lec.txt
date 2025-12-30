@@ -1,0 +1,83 @@
+Classes and Objects
+===============================================
+
+class -
+  It is nothing but group of object which have common properties.
+  It is templete or blueprint from which object is created.
+  It is logical entity and not physically exists
+  -class doesen't allocated  memory when it is created.
+  
+  class can contain-
+  
+  1)Properties/fields/data variables / states
+  2)methods
+  3)constructor
+  4)blocks
+
+==================================================
+  
+  
+  Object 
+  
+  -java is object oriented programming
+  -object has states(properties) and behaviour(methods).
+  -object is an instance of a class.
+  -it is logically and physically exists.
+  -new keyword is used to crate an object.
+  -object can be created by many times
+  -object allocates memory when it is created
+  
+====================================================================================
+
+public class Fan {
+	String fanName;  
+    int wings;
+	int price;         // data varibales,properties,fields, states,data member
+	
+	public void fanWork() {        //method without argument 
+		System.out.println("Circulate the air..");
+	}
+	
+	public void printFeatures(String fanName,int wings,int price) {   //method with argument
+		System.out.println("=============================");
+		System.out.println("Feastures of:"+fanName);
+		System.out.println("Name of fan:"+fanName);
+		System.out.println("Number  of Wings:"+wings);
+		System.out.println("Price  of fan:"+price);
+	}
+	
+	
+	
+}
+
+  
+  
+=================================================================
+ 
+public class StudentApp {
+
+	public static void main(String[] args) {
+		
+	
+		Fan fan = new Fan();
+		fan.printFeatures("Usha",4,500);
+		fan.printFeatures("bajaj",3,1000);
+		fan.printFeatures("havels",5,800);  // same object with different argument value
+		
+		Fan usha = new Fan();
+		usha.printFeatures("Usha",4,500);
+		
+		Fan bajaj = new Fan();
+		bajaj.printFeatures("bajaj",3,1000);
+		
+		Fan havels = new Fan();
+		havels.printFeatures("havels",5,800);
+		
+		
+
+	}
+	
+
+}
+
+==================================================================

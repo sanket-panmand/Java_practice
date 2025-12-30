@@ -1,0 +1,373 @@
+Java Multithreading
+=======================================================
+Multitasking  -
+- performing two or more tasks at a same time.
+-nearly all operating system are capable of doing it.
+It is an approach to minimize the execuation time and maximize the CPU utilization by execuating multiple task simulteniously.
+In Java we can achive this multitasking by using two methods-
+
+   1)Multiprocessing
+   2)Multithreading
+
+1)Multiprocessing:-
+   -It is nothing but numbers of processes avaiable on your computer(Host).
+   -Every process initiated by user is sent to CPU(processor).
+   -CPU loads these processes.
+   -To perform multiprocessing in java the user needs one processor.Hence , when user wants to run simultenoius execuation of process  then alternate core of CPU gets triggered and execuate the process.
+
+
+2)Multithreading:
+
+-Multithreading is a java feature that allows concurrent execution of two ore more parts of program 
+for maximum utilization of CPU.
+-Each part of program can be called as thread.
+-So, thread is light-weight process within the process.
+- Difference between multiprocessing and multithreading is that --> instead of physical processor , multithreading involves virtual and independent thread.
+
+
+==================================================================================================
+
+Thread -->
+ -Thread is smallest segement of entire process.
+ - Thread is an independent, virtual, and sequential control flow within the process.
+
+
+
+
+====================================================================================================
+
+Types -
+1.Process based
+2.Thread based
+
+
+Process Based-
+-Running two or more program parallely.
+-here program is refered a process
+
+
+Thread Based -
+- Thread based multitasking means single program performs two or more tasks
+-Thread is a path of execuation or it is a smallest unit of program or light weight process.
+
+
+
+=================================================
+Process:
+1.Each Process requires its own address sapce in a memory.
+2.O.S. requires a significant amount of CPU time to switch from one process to another.
+3.Interprocess communication requires time.
+
+
+Thread :
+1.Threads shares same adress space in memory because they are in same process(program).
+2.Interthread communaction is very fast as they are in same menomry address.
+
+
+Thread can be created using two ways:
+
+1.Extending the thread class and overriding the run() method
+2.Implementing the runnable Interface and passing to thread object
+=====================================================
+
+Thread Life Cycle
+
+1.New 
+ - In this state, a new thread begins its life cycle.
+  -If you are creating instance of thread class that means thread is into new state but before invocation of 
+start() method.
+
+2.Runnable
+ - once you initiate start() method then your thread is into runnable state.
+ -Here your threrad is expecting to execuate the program.
+
+3.Running
+-when thread get the CPU, it moves from runnable to runing.
+
+
+4.Non-Runnable (Blocked)
+- Your thread is still alive, but not eligible to run currently.
+
+5.Dead/Terminate
+
+This state occurs when
+  - when your thread has finished its job, then it exists or termintes normally.
+  - unusaual events when occurs like unhandled exceptions or some errors. 
+------------------------------------------------------------------------------
+
+By using runnable interface
+------------------
+public class MutithradingDemo2 implements Runnable {
+
+	public static void main(String[] args) {
+		for(int i =0; i< 10; i++) {
+			Thread obj = new Thread(new MutithradingDemo2());
+			obj.start();
+		}
+
+	}
+
+	@Override
+	public void run() {
+		try {
+			System.out.println("The current running thread is :"+Thread.currentThread().getId());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+--------------------------------------------
+by using thrread class
+--------------------
+
+public class MultithreadDemo extends Thread{
+
+	
+	
+	public static void main(String[] args) {
+
+		for(int i =0; i < 22; i++) {
+			MultithreadDemo obj = new MultithreadDemo();
+			obj.start();
+			
+		}		
+	}
+	
+	@Override
+	public void run() {
+		
+		System.out.println("Cureent Tread running is :"+Thread.currentThread().getId());
+	}
+=========================================================
+
+
+
+
+	
+}
+============================================================
+
+
+1.What is difference between thread class and runnable interface?
+2.which is better choice thread class or runnable interface?
+
+
+overhead inheritance -
+
+
+https://www.tutorialspoint.com/difference-between-thread-and-runnable-in-java
+
+
+===================================================================
+
+
+public class MultiWaitExp implements Runnable{
+
+	private String msg;
+
+	public MultiWaitExp() {
+	
+	}
+	public MultiWaitExp(String msg) {
+		this.msg = msg;
+	}
+
+	@Override
+	public void run() {
+		String name = Thread.currentThread().getName();
+		synchronized (msg) {
+			try {
+				System.out.println(name+ " waiting time to get notify:"+System.currentTimeMillis());
+				msg.wait(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			System.out.println(name+ " waiting time to get notify:"+System.currentTimeMillis());
+            System.out.println(name+" --->"+msg);
+		}
+	}
+
+}
+===============================================================
+
+public class MulithreadingEx extends Thread{
+	private int number;
+	public MulithreadingEx() {
+		super();
+	}
+	public MulithreadingEx(int number) {
+		super();
+		this.number = number;
+	}
+	//run method ==> execuation code for thread
+	public void run() {
+		int counter =0;
+		int numInt =0;
+		
+		do {
+			numInt = counter + 10;
+			System.out.println(this.getName()+"===>"+numInt);
+			counter++;
+		}while(numInt != number );
+		System.out.println("--------"+this.getName()+" "+counter+" times ------");
+	}
+	
+	
+	
+
+}
+
+
+==============================================================
+------------------------------------------------------------
+
+
+
+	public static void main(String[] args) {
+//		System.out.println("t1 started............");
+//		Thread t1 = new MulithreadingEx(20);
+//		
+//		synchronized (t1) {
+//			try {
+//				
+//				t1.start();
+//				//wait for t1 to die
+//				t1.join();
+//				//t1.sleep(5000);		
+//			} catch (InterruptedException e) {
+//				e.printStackTrace();
+//			}
+//		}
+//		
+//		
+//		System.out.println("t2 started............");
+//		Thread t2 = new MulithreadingEx(15);
+//		t2.start();
+		
+		
+		MultiWaitExp mulExp = new MultiWaitExp("good morning");
+		Thread t1 = new Thread(mulExp);
+	t1.start();
+		
+	}
+
+}
+--------------------------------------------------------------------------
+-Java is multithreaded programming language that means we can develope multihreded program using java.
+-A multi threaded program contains two or more parts that can run concurrently and each part can handle a different task at he same time.
+
+
+
+============================================================
+
+
+
+package com.wipro.program;
+
+public class MultithreadingEx implements Runnable{
+
+	private Thread t;
+	private String threadName;
+	
+	MultithreadingEx(String name){
+		this.threadName =name;
+		System.out.println("Creating ---->"+this.threadName);
+	}
+	
+	@Override
+	public void run() {
+	System.out.println("Running--->"+this.threadName);
+	try {
+	for(int i=0; i<5; i++) {
+		System.out.println("Thread :"+this.threadName+" "+i);	
+			Thread.sleep(50);
+		} }catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void start() {
+		System.out.println("Strating :"+this.threadName);	
+		t = new Thread(this,this.threadName);
+		t.start();
+	}
+	
+	
+
+}
+---------------------------------------------
+
+
+
+
+
+public class TestExamp {
+
+	public static void main(String[] args) {
+		MultithreadingEx a = new MultithreadingEx("Thread-1");
+		a.start();
+		MultithreadingEx b = new MultithreadingEx("Thread-2");
+		b.start();
+
+	}
+
+}
+
+===========================================================================\
+
+
+
+Synchronization example  :-----
+
+
+public class SynchronizationExample {
+
+	public static void main(String args[]) {
+		TestCounter tc = new TestCounter();
+		Thread t1 = new Thread(() -> {
+			for (int i = 0; i < 1000; i++) {
+				tc.increment();
+			}
+		});
+
+		Thread t2 = new Thread(() -> {
+			for (int i = 0; i < 1000; i++) {
+				tc.increment();
+			}
+		});
+
+		t1.start();
+		t2.start();
+		
+		try {
+			t1.join();
+			t2.join();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println("The final resultant count is-->"+tc.getCounter());
+		
+	}
+}
+--------------------------------------------------------------------
+
+public class TestCounter {
+
+	private int counter =0;
+	
+	public  synchronized void increment() {
+		counter++;
+	}
+
+	public int getCounter() {
+		return counter;
+	}
+
+	public void setCounter(int counter) {
+		this.counter = counter;
+	}
+	
+	
+}
+
+@

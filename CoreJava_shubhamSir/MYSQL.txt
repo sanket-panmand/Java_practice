@@ -1,0 +1,49 @@
+MYSQL->RDBMS (Relational Database Management System)
+
+SQL- Structured Querry Language
+==============================================================
+
+Querry for creatting database :
+
+    create database sparkdb;
+	 
+for select database to use :
+	 
+    use sparkdb;
+	 
+for listing all present db's :
+	 
+    show databases;
+	
+crate table querry :
+    
+    create table address (id INT NOT NULL AUTO_INCREMENT, pincode INT NOT NULL,  landmark VARCHAR(100), PRIMARY KEY(id));	
+	
+    create table country (id int not null AUTO_INCREMENT, countryname varchar(100), primary key(id));
+	
+To describe table structure :
+
+    desc employee;
+	
+Insert querry :
+    insert into country(countryname) values('Peru');
+    insert into address(pincode, landmark)values(411002,'Mahatma Phule Peth');	
+
+To fetch all records from table:
+    select *from country;
+	select pincode, landmark from address;
+
+fetch all records on where condition 
+    select *from country where id=4;
+	select pincode, landmark from address where id=1;
+
+Update records:
+
+     update address set pincode=411016, landmark='shivajinagar' where id=5;
+     update address set pincode=411003 where id=3;
+     update country set countryname='Dubai' where id=6;
+	 update employee set salary =47000 where id=1;
+	 
+to delete the records:
+
+    delete from address where id=3;

@@ -1,0 +1,35 @@
+Name of the project : 
+
+     CRM - Customer Registration Module(CUB City Union Bank)
+===================================================	 
+Team Size - 9
+
+4 -developemt   (2 are full stack / 2 are java developer)
+1- testing (mannual + automation)
+4- manger and deployment team
+
+====================================================
+Project Description/ Summary
+
+User Driven Registration - New User
+This is a user driver new customer registration of bank,
+where customer can register itself to the bank for new account opening.
+This application of bank is used by user where he can put basic details, address details,
+organisation details and required details for registrtion in bank.
+He can initiate KYC also through this application.
+
+
+=======================================================
+Roles and Responsabilities
+
+Responsible for developing rest apis for customer registration.
+Interacting with client and updating application according to requirment.
+Design table structure and generate tables in database.
+End to end testing of customer registration application(Unit Testing).
+
+=========================================================
+
+Platform Used:
+
+Spring Boot, Java 8, MySQL, Hibernate, JPA 
+

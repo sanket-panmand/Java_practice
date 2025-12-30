@@ -1,0 +1,175 @@
+Data Types In Java:
+
+Data - collection of information
+
+Data In the form of -
+
+
+Number  
+Words  
+Character 
+true/false
+decimal
+======================================================
+
+static data -/hard coated -  fixed input and output
+dynamic data   -             changebale input and output
+
+
+
+========================================================
+ int age;    //declare
+ 
+ age=21;     // define
+ 
+
+ -- Different size and their values which can be stored in the variable.
+ 
+ Types of data types:-
+ 
+ 1)primitive data type  - Given By Java (Build in data types) and size is fixed
+ 2)non primitive data types - Which are created by user and vary in size
+ 
+  1)primitive data type:-
+  
+                boolean flag = false;  //1 bit
+		char ch ='w';    //2 byte
+		short v =88;     //2 byte
+                byte b = 11;    //1 byte
+		int age=87;      // 4 byte
+		long l = 77887887777777l;  //8 byte
+		float f =10.2f;   // 4 byte
+		double db = 10.888;  // 8 byte
+			
+-------------------------------------------------------------------------		
+		
+  2)non-primitive datatypes
+  
+  datatypes which is created by you guyzz...!!!
+  
+  1)String s="My class"; 
+  2))class
+  3)Arrays etc.
+  4)Interface
+		
+===================================================================
+
+
+      int z ;   //declare
+        z = 8;     // define
+
+
+
+	public class DataTypesExample {
+
+	public static void main(String[] args) {
+		 
+		DataTypesExample dt = new DataTypesExample();
+		int res =dt.addNum(10, 20);
+		System.out.println(res);
+	
+	}
+	
+	
+	public int addNum(int a, int b) {
+		int c = a + b;
+		return c;
+	}
+
+}
+
+====================================================================
+***************do it by today itself**************************
+
+public class BasicProgramming {
+
+	public static void main(String[] args) {
+		int aa=addNumber(5,7);
+		System.out.println(aa);
+		
+		String s =sayHi();
+		System.out.println(s);
+		
+		long sub =subNum(55, 50);
+		System.out.println(sub);
+	}
+	
+	public static int addNumber(int a, int b) {
+		int add = a + b;
+
+		return add;
+	}
+	
+	public static String sayHi() {
+		String str = "Hey Hi...!";	
+		return str;
+		
+	}
+	
+	public static long subNum(long a, long b) {
+		 long sub = a - b;
+		 return sub;
+	}
+		
+		
+	
+}
+
+
+
+
+
+
+
+
+
+
+==================================================================
+To take input from user:
+
+ - we used scanner class to take input from user
+
+
+
+Example -1
+
+public static void main(String[] args) {
+	 Scanner sc = new Scanner(System.in);
+	 System.out.println("Enter your name :");
+	 String name = sc.next();
+	 greeting(name);
+		
+	}
+	
+	public static long squareNum(long a) {
+		return a * a;
+	}
+	
+	public static void greeting(String name) {
+		System.out.println("Hey Welcome "+name);
+	}
+
+=========================================================
+
+Example -2
+
+public static void main(String[] args) {
+	 Scanner sc = new Scanner(System.in);
+	 System.out.println("Enter no to check square:");
+	 long s = sc.nextLong();
+	long x = squareNum(s);
+	System.out.println(x);
+	}
+	
+	public static long squareNum(long a) {
+		long b = a * a;
+		return b;
+	}
+===========================================================
+
+
+
+
+
+
+
